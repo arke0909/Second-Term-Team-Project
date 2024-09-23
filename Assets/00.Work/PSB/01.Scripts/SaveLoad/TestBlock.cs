@@ -4,11 +4,10 @@ using UnityEngine;
 
 public class TestBlock : MonoBehaviour
 {
-    /*private Rigidbody2D rb;
     private void Start()
     {
-        rb = GetComponent<Rigidbody2D>();
-    }*/
+        Load();
+    }
 
     private void Update()
     {
@@ -27,8 +26,12 @@ public class TestBlock : MonoBehaviour
         }
     }
 
-    /*private void FixedUpdate()
+    public void Load()
     {
-        rb.velocity = new Vector2(5f, rb.velocity.y);
-    }*/
+        GameData loadData = DataController.Load("save_001");
+        Debug.Log(string.Format("LoadData Result => name : {0}, pos : {1}", loadData.name, loadData.pos));
+        gameObject.name = loadData.name;
+        gameObject.transform.position = loadData.pos;
+    }
+
 }

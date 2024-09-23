@@ -15,6 +15,22 @@ public class SaveLoadManager : MonoBehaviour
     public Transform player; // 플레이어의 Transform을 에디터에서 설정하거나 코드로 할당
     private string filePath;
 
+    private static SaveLoadManager _instnace;
+    public static SaveLoadManager Instance => _instnace;
+
+    private void Awake()
+    {
+        if (_instnace == null)
+        {
+            _instnace = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+    }
+
     void Start()
     {
         // 파일 경로 설정 (Application.persistentDataPath 사용)
@@ -33,19 +49,26 @@ public class SaveLoadManager : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Save하기
+    /// </summary>
     public void SavePlayerData()
     {
+        Debug.Log("success");
         PlayerData playerData = new PlayerData
         {
             x = player.position.x,
             y = player.position.y
         };
-
+        Debug.Log("success2");
         string json = JsonUtility.ToJson(playerData);
         File.WriteAllText(filePath, json);
         Debug.Log("Player data saved: " + json);
     }
 
+    /// <summary>
+    /// Load하기
+    /// </summary>
     public void LoadPlayerData()
     {
         if (File.Exists(filePath))
@@ -62,4 +85,5 @@ public class SaveLoadManager : MonoBehaviour
             Debug.LogWarning("Player data file not found.");
         }
     }
+
 }
