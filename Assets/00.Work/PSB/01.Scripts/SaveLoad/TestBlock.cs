@@ -22,6 +22,7 @@ public class TestBlock : MonoBehaviour
         {
             GameData loadData = DataController.Load("save_001");
             Debug.Log(string.Format("LoadData Result => name : {0}, pos : {1}", loadData.name, loadData.pos));
+            gameObject.name = loadData.name;
             gameObject.transform.position = loadData.pos;
         }
     }
