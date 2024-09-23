@@ -1,18 +1,18 @@
 using System;
 using UnityEngine;
-using UnityEngine.Events;
 using UnityEngine.InputSystem;
 using static Controls;
 
 [CreateAssetMenu(menuName = "SO/InputReader")]
-public class InputReaderSO : ScriptableObject, IPlayerActions
+public class InputReaderSO : ScriptableObject, IPlayerActions, IPlayerComponent
 {
     public event Action<Vector2> Movement;
     public event Action Jump;
 
     Controls _control;
 
-    private Vector2 moveDir;
+    public Vector2 moveDir;
+    private Player _player;
 
     private void OnEnable()
     {
@@ -35,5 +35,10 @@ public class InputReaderSO : ScriptableObject, IPlayerActions
     {
         moveDir = context.ReadValue<Vector2>();
         Movement?.Invoke(moveDir);
+    }
+
+    public void Initialize(Player player)
+    {
+        _player = player;
     }
 }
