@@ -20,14 +20,11 @@ public class PlayerSpawnpoint : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log("1");
         if (collision.tag == "SpawnPoint")
         {
             transform.parent.position = collision.transform.position;
-            Debug.Log("3");
             SaveLoadManager.Instance.SavePlayerData();
         }
-
     }
 
 }

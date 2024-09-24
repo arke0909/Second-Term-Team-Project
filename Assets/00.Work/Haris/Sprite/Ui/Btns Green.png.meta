@@ -34,7 +34,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -43,12 +43,12 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 32
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -72,7 +72,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -121,7 +121,280 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: Btns Green_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2301
+        width: 844
+        height: 260
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fc8c398069ba7b243ab660f80eb868c2
+      internalID: 1986674154
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Btns Green_1
+      rect:
+        serializedVersion: 2
+        x: 1028
+        y: 2301
+        width: 844
+        height: 260
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 359a5ea91712ece498072ccff003fff4
+      internalID: 979336276
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Btns Green_2
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1930
+        width: 844
+        height: 260
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a5969c078adc2c54c9610baf37ef2892
+      internalID: -1406193435
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Btns Green_3
+      rect:
+        serializedVersion: 2
+        x: 1028
+        y: 1930
+        width: 844
+        height: 260
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f646fc77e8d67a14cb85824b618bdd9f
+      internalID: 813309159
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Btns Green_4
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1556
+        width: 844
+        height: 261
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6a57e9fcd21897a42921db2309e3ad60
+      internalID: 579194849
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Btns Green_5
+      rect:
+        serializedVersion: 2
+        x: 1028
+        y: 1556
+        width: 844
+        height: 261
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: adf6afa4a98bbe84cb5f8a38afb13fb3
+      internalID: -1723309122
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Btns Green_6
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1178
+        width: 844
+        height: 261
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8823e5040df818a4cb12dac3f12d8d32
+      internalID: 1260684555
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Btns Green_7
+      rect:
+        serializedVersion: 2
+        x: 1028
+        y: 1178
+        width: 844
+        height: 261
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bc0ed261aa67b2a4ea3c8756a67ced25
+      internalID: 1894248745
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Btns Green_8
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 767
+        width: 844
+        height: 261
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 70acf357e687b684596e55eff68c34d5
+      internalID: -1510800965
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Btns Green_9
+      rect:
+        serializedVersion: 2
+        x: 1028
+        y: 767
+        width: 844
+        height: 261
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6fe64f6b9f464ea49985f987b8513b5a
+      internalID: 1309832529
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Btns Green_10
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 391
+        width: 844
+        height: 262
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 324559445dc00da478e0ed93c8940aca
+      internalID: -1676489723
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Btns Green_11
+      rect:
+        serializedVersion: 2
+        x: 1028
+        y: 391
+        width: 844
+        height: 262
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fe01b707757e67347843bcbc036e3aba
+      internalID: 1370711351
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Btns Green_12
+      rect:
+        serializedVersion: 2
+        x: 501
+        y: 0
+        width: 846
+        height: 260
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 01b5a40a2874c03468accb24d73ccd5f
+      internalID: 1193666753
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -132,7 +405,20 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Btns Green_0: 1986674154
+      Btns Green_1: 979336276
+      Btns Green_10: -1676489723
+      Btns Green_11: 1370711351
+      Btns Green_12: 1193666753
+      Btns Green_2: -1406193435
+      Btns Green_3: 813309159
+      Btns Green_4: 579194849
+      Btns Green_5: -1723309122
+      Btns Green_6: 1260684555
+      Btns Green_7: 1894248745
+      Btns Green_8: -1510800965
+      Btns Green_9: 1309832529
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
