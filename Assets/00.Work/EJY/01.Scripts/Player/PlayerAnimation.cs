@@ -1,18 +1,18 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerAnimation : MonoBehaviour, IPlayerComponent
 {
-    private Animator AnimaCompo;
-    private SpriteRenderer SpriteRendererCompo;
     private Player _player;
+    private Animator AnimaCompo;
+    private PlayerMovement _playerMovement;
 
     public void Initialize(Player player)
     {
         _player = player;
-
         AnimaCompo = GetComponent<Animator>();
-        SpriteRendererCompo = GetComponent<SpriteRenderer>();
+        _playerMovement = _player.GetCompo<PlayerMovement>();
     }
 }

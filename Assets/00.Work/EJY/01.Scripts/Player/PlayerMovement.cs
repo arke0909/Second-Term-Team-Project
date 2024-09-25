@@ -8,8 +8,8 @@ public class PlayerMovement : MonoBehaviour, IPlayerComponent
     [SerializeField] private float _moveSpeed;
     [SerializeField] private float _jumpPower;
     
-    private Rigidbody2D RbCompo;
-    private GroundChecker GroundCheckerCompo;
+    public Rigidbody2D RbCompo { get; private set; }
+    public GroundChecker GroundCheckerCompo { get; private set; }
 
     private Player _player;
     private InputReaderSO _input;
@@ -38,7 +38,7 @@ public class PlayerMovement : MonoBehaviour, IPlayerComponent
 
     private void Jump()    
     {
-        if(GroundCheckerCompo.GroundCheck())
+        if(GroundCheckerCompo.IsGround)
         RbCompo.AddForce(Vector2.up * _jumpPower,ForceMode2D.Impulse);
     }
 }
