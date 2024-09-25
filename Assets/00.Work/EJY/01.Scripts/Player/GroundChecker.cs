@@ -14,6 +14,10 @@ public class GroundChecker : MonoBehaviour, IPlayerComponent
         IsGround = Physics2D.OverlapBox(transform.position, _checkerSize, 0, _whatIsGround) != null;
     }
 
+    private void FixedUpdate()
+    {
+        GroundCheck();
+    }
     public void Initialize(Player player)
     {
 
