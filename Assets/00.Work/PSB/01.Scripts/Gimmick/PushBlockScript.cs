@@ -32,7 +32,7 @@ public class PushBlockScript : MonoBehaviour
 
     void OnDrawGizmos()
     {
-        Gizmos.color = new Color(1f, 0f, 0f, 0.1f); // R, G, B, A
+        Gizmos.color = new Color(1f, 0f, 0f, 0.1f);
         Gizmos.DrawWireSphere(transform.position, detectionRange);
     }
 }
