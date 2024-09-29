@@ -12,21 +12,27 @@ public class PushBlockScript : MonoBehaviour
 
     void Start()
     {
-        player = GameObject.FindWithTag("Player").transform;
+        player = GameObject.FindWithTag("PlayerCollider").transform;
         rb = GetComponent<Rigidbody2D>();
     }
 
-    void Update()
+    void FixedUpdate()
     {
         if (player != null)
         {
+            Debug.Log("1");
             float distance = Vector2.Distance(transform.position, player.position);
-
+            Debug.Log("2");
             if (distance < detectionRange)
             {
+                Debug.Log("3");
                 Vector2 direction = new Vector2(player.position.x - transform.position.x, 0).normalized;
                 rb.AddForce(direction * pullForce);
             }
+        }
+        else if (player == null)
+        {
+            Debug.Log("10");
         }
     }
 
