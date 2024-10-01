@@ -43,7 +43,7 @@ public class SaveLoadManager : MonoBehaviour
     void Update()
     {
         // 'S' 키를 눌렀을 때 위치 저장
-        if (Input.GetKeyDown(KeyCode.S))
+        if (Input.GetKeyDown(KeyCode.B))
         {
             SavePlayerData();
         }
