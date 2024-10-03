@@ -7,6 +7,7 @@ public class WindShowBtn : MonoBehaviour
 {
     [SerializeField] private GameObject windBlock;
     [SerializeField] private GameObject windHideBtn;
+    [SerializeField] private GameObject windShowBtn;
     [SerializeField] private Tilemap specialTile;
 
     private void Start()
@@ -16,12 +17,16 @@ public class WindShowBtn : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (windBlock != null)
+        if (collision.gameObject.tag == "PlayerCollider")
         {
-            windBlock.SetActive(true);
-            windHideBtn.SetActive(true);
-            gameObject.SetActive(false);
-            specialTile.gameObject.layer = 7;
+            if (windBlock != null)
+            {
+                windBlock.SetActive(true);
+                windHideBtn.SetActive(true);
+                gameObject.SetActive(false);
+                specialTile.gameObject.layer = 7;
+            }
         }
     }
+
 }

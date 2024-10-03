@@ -7,6 +7,6 @@ public class StartBtnClick : MonoBehaviour
 {
     public void BtnClick()
     {
-        SceneManager.LoadScene("TestScenes");
+        SceneManager.LoadScene("Map");
     }
 }

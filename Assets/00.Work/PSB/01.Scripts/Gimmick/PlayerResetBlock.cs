@@ -15,5 +15,10 @@ public class PlayerResetBlock : MonoBehaviour
         {
             SaveLoadManager.Instance.LoadPlayerData();
         }
+        if (collision.gameObject.tag == "PushBlock")
+        {
+            collision.gameObject.SetActive(false);
+        }
+
     }
 }
