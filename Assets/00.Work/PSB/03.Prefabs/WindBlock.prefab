@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 7551482812226778622}
   - component: {fileID: 728369471474561395}
   - component: {fileID: 6246690589172202899}
+  - component: {fileID: 4424772056692464062}
   m_Layer: 0
   m_Name: WindBlock
   m_TagString: Untagged
@@ -4950,3 +4951,16 @@ ParticleSystemRenderer:
   m_MeshWeighting2: 1
   m_MeshWeighting3: 1
   m_MaskInteraction: 0
+--- !u!114 &4424772056692464062
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3270397479965295596}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e6e31efc8657894db74e66a1674caa5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gizmoColor: {r: 0, g: 1, b: 0, a: 1}

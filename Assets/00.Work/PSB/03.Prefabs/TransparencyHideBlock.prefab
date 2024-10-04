@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 1509603718202508084}
   - component: {fileID: 5916182291526140956}
   - component: {fileID: 7324460523934499305}
-  - component: {fileID: 3630972241712157680}
+  - component: {fileID: 6320633046128910261}
   m_Layer: 0
-  m_Name: WindShowBtn
+  m_Name: TransparencyHideBlock
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -27,8 +27,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2411007355794178316}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 2.092, y: -0.201, z: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -76,7 +76,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 0.04967034, g: 1, b: 0, a: 1}
+  m_Color: {r: 0, g: 0.2067275, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -131,7 +131,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &3630972241712157680
+--- !u!114 &6320633046128910261
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -140,9 +140,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 2411007355794178316}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 67635947d84714a49874d98e18a45900, type: 3}
+  m_Script: {fileID: 11500000, guid: c598d19be7c05814c91948c7c4f6b0b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  windBlock: {fileID: 0}
-  windHideBtn: {fileID: 0}
-  specialTile: {fileID: 0}
+  transparencyBlock: {fileID: 0}
+  delay: 7
