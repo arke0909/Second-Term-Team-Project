@@ -24,6 +24,7 @@ public class TransparencyHideBtn : MonoBehaviour
         }
     }
 
+
     private IEnumerator HideAndShow()
     {
         transparencyBlock.SetActive(false);

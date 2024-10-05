@@ -38,6 +38,7 @@ public class WindHideBtn : MonoBehaviour
         windBlock.SetActive(true);
         gameObject.GetComponent<SpriteRenderer>().enabled = true;
         gameObject.GetComponent<BoxCollider2D>().enabled = true;
+
         specialTile.gameObject.layer = 7;
     }
 
