@@ -123,6 +123,23 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &649601653 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4398094020360783071, guid: 64f84be795dba0d4a9b7fcaacd828697, type: 3}
+  m_PrefabInstance: {fileID: 5246461649498873202}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &649601657
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 649601653}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 50dd5a55b589f934eb268e6def5268c0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &945998787
 GameObject:
   m_ObjectHideFlags: 0
@@ -402,6 +419,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 6217384704671189282, guid: 64f84be795dba0d4a9b7fcaacd828697, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8575877531827993596, guid: 64f84be795dba0d4a9b7fcaacd828697, type: 3}
+      propertyPath: _checkerSize.y
+      value: 0.1
+      objectReference: {fileID: 0}
     - target: {fileID: 8937334172897358955, guid: 64f84be795dba0d4a9b7fcaacd828697, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -442,10 +467,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 6912870305116688511, guid: 64f84be795dba0d4a9b7fcaacd828697, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 4398094020360783071, guid: 64f84be795dba0d4a9b7fcaacd828697, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 649601657}
   m_SourcePrefab: {fileID: 100100000, guid: 64f84be795dba0d4a9b7fcaacd828697, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
