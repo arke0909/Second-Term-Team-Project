@@ -6,13 +6,11 @@ using UnityEngine;
 public class PlayerAnimation : MonoBehaviour, IPlayerComponent
 {
     private Player _player;
-    private Animator AnimaCompo;
-    private PlayerMovement _playerMovement;
+    public Animator AnimaCompo { get; private set; }
 
     public void Initialize(Player player)
     {
         _player = player;
         AnimaCompo = GetComponent<Animator>();
-        _playerMovement = _player.GetCompo<PlayerMovement>();
     }
 }
