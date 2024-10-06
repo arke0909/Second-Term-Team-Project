@@ -9,7 +9,6 @@ public class PlayerMovement : MonoBehaviour, IPlayerComponent
     [SerializeField] private float _jumpPower;
     
     public Rigidbody2D RbCompo { get; private set; }
-    public GroundChecker GroundCheckerCompo { get; private set; }
 
     private Player _player;
     private InputReaderSO _input;
@@ -20,25 +19,15 @@ public class PlayerMovement : MonoBehaviour, IPlayerComponent
 
         RbCompo = GetComponent<Rigidbody2D>();
         _input = _player.GetCompo<InputReaderSO>();
-        GroundCheckerCompo = GetComponentInChildren<GroundChecker>();
-
-        _input.Jump += Jump;
     }
-
-    private void FixedUpdate()
-    {
-        Movement();
-    }
-
-    private void Movement()
+    public void Movement()
     {
         Vector2 moveDir = _input.moveDir;
         RbCompo.velocity = new Vector2(moveDir.x * _moveSpeed, RbCompo.velocity.y);
     }
 
-    private void Jump()    
+    public void Jump()    
     {
-        if(GroundCheckerCompo.IsGround)
         RbCompo.AddForce(Vector2.up * _jumpPower,ForceMode2D.Impulse);
     }
 }

@@ -7,20 +7,16 @@ public class GroundChecker : MonoBehaviour, IPlayerComponent
     [SerializeField] private Vector2 _checkerSize;
     [SerializeField] private LayerMask _whatIsGround;
 
-    public bool IsGround { get; private set; } = false;
+    public NotifyValue<bool> IsGround = new NotifyValue<bool>();
 
     public void GroundCheck()
     {
-        IsGround = Physics2D.OverlapBox(transform.position, _checkerSize, 0, _whatIsGround) != null;
+        IsGround.Value = Physics2D.OverlapBox(transform.position, _checkerSize, 0, _whatIsGround) != null;
     }
 
     private void FixedUpdate()
     {
         GroundCheck();
-    }
-    public void Initialize(Player player)
-    {
-
     }
 
     private void OnDrawGizmos()
@@ -28,5 +24,9 @@ public class GroundChecker : MonoBehaviour, IPlayerComponent
         Gizmos.color = Color.red;
         Gizmos.DrawWireCube(transform.position, _checkerSize);
         Gizmos.color = Color.white;
+    }
+
+    public void Initialize(Player player)
+    {
     }
 }
