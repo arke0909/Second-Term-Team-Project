@@ -22,17 +22,8 @@ public class PlayerSpawnpoint : MonoBehaviour
     {
         if (collision.tag == "SpawnPoint")
         {
-            if (collision.tag == "DeathBlock")
-            {
-                Vector2 v2 = new Vector2(-1.8f, 2.35f);
-                transform.parent.position = v2;
-            }
-            else
-            {
-                transform.parent.position = collision.transform.position;
-                SaveLoadManager.Instance.SavePlayerData();
-            }
-
+            transform.parent.position = collision.transform.position;
+            SaveLoadManager.Instance.SavePlayerData();
         }
     }
 
