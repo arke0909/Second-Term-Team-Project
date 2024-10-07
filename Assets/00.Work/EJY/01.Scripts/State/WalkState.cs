@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class WalkState : GroundState
+public class WalkState : State
 {
     public WalkState(Player player, string animaName) : base(player, animaName)
     {
@@ -15,13 +15,13 @@ public class WalkState : GroundState
 
     public override void StateUpdate()
     {
-        if (_inputReader.moveDir.x == 0)
+        if (_inputReader.MoveDir.x == 0 && _groundChecker.IsGround.Value)
             _player.ChageState(PlayerStateEnum.Idle);
+        _playerMovement.Movement(_inputReader.MoveDir);
     }
 
     public override void StateFixedUpdate()
     {
-        _playerMovement.Movement();
     }
 
     public override void Exit()

@@ -20,10 +20,10 @@ public class PlayerMovement : MonoBehaviour, IPlayerComponent
         RbCompo = GetComponent<Rigidbody2D>();
         _input = _player.GetCompo<InputReaderSO>();
     }
-    public void Movement()
+    public void Movement(Vector2 moveDir)
     {
-        Vector2 moveDir = _input.moveDir;
         RbCompo.velocity = new Vector2(moveDir.x * _moveSpeed, RbCompo.velocity.y);
+        Debug.Log(moveDir);
     }
 
     public void Jump()    
