@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FallState : State
+public class FallState : WalkState
 {
     public FallState(Player player, string animaName) : base(player, animaName)
     {

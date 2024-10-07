@@ -25,8 +25,6 @@ public abstract class State
         _playerMovement = _player.GetCompo<PlayerMovement>();
         _inputReader = _player.GetCompo<InputReaderSO>();
         _groundChecker = _player.GetCompo<GroundChecker>();
-
-        _inputReader.Jump += HandleChangeJumpState;
     }
 
     private void HandleChangeJumpState()
@@ -38,6 +36,7 @@ public abstract class State
     public virtual void Enter()
     {
         _animator.AnimaCompo.Play(_animaHash);
+        _inputReader.Jump += HandleChangeJumpState;
     }
 
     public virtual void StateUpdate()
@@ -46,11 +45,12 @@ public abstract class State
 
     public virtual void StateFixedUpdate()
     {
-        if (_playerMovement.RbCompo.velocity.y < 0)
+        if (_playerMovement.RbCompo.velocity.y < 0 && !_groundChecker.IsGround.Value)
             _player.ChageState(PlayerStateEnum.Fall);
     }
 
     public virtual void Exit()
     {
+        _inputReader.Jump -= HandleChangeJumpState;
     }
 }
