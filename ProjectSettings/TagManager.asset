@@ -8,6 +8,8 @@ TagManager:
   - PlayerCollider
   - PushBlock
   - DeathBlock
+  - NextMapBlock
+  - Cloud
   layers:
   - Default
   - TransparentFX
