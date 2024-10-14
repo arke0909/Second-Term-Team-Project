@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class JumpState : WalkState
 {
-    public JumpState(Player player, string animaName) : base(player, animaName)
+    public JumpState(Player player, string animaName, StateMachine stateMachine) : base(player, animaName, stateMachine)
     {
     }
 
@@ -13,6 +13,8 @@ public class JumpState : WalkState
         base.Enter();
         _playerMovement.Jump();
     }
+
+    
 
     public override void Exit()
     {

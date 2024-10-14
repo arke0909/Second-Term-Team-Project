@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class IdleState : State
 {
-    public IdleState(Player player, string animaName) : base(player, animaName)
+    public IdleState(Player player, string animaName, StateMachine stateMachine) : base(player, animaName, stateMachine)
     {
     }
 
@@ -16,7 +16,7 @@ public class IdleState : State
     public override void StateUpdate()
     {
         if(Mathf.Abs(_inputReader.MoveDir.x) > 0)
-            _player.ChageState(PlayerStateEnum.Walk);
+            _stateMachine.ChageState(PlayerStateEnum.Walk);
     }
 
     public override void Exit()

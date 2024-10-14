@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class GroundState : State
 {
-    public GroundState(Player player, string animaName) : base(player, animaName)
+    public GroundState(Player player, string animaName, StateMachine stateMachine) : base(player, animaName, stateMachine)
     {
     }
 
@@ -20,7 +20,7 @@ public class GroundState : State
     private void HandleIsGroundChange(bool prev, bool next)
     {
         if (next == false)
-            _player.ChageState(PlayerStateEnum.Fall);
+            _stateMachine.ChageState(PlayerStateEnum.Fall);
     }
 
     public override void Exit()
