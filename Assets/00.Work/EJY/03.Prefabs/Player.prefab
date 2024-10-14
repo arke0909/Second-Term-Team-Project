@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 6240226445491211491}
   - component: {fileID: 6109693746045558292}
   - component: {fileID: 3339936471402926660}
+  - component: {fileID: 842310546876673115}
   m_Layer: 8
   m_Name: Player
   m_TagString: Player
@@ -94,6 +95,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _moveSpeed: 3
   _jumpPower: 7
+  timeInAir: 0
+  extraGravity: 4
+  gravityDelay: 0.15
 --- !u!114 &6109693746045558292
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -120,6 +124,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _playerCollider: {fileID: 6916788835390002668}
+--- !u!114 &842310546876673115
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 177965042112780553}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c8278d76f40e7f8429229c856a742133, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &552311080579674094
 GameObject:
   m_ObjectHideFlags: 0
@@ -167,7 +183,7 @@ MonoBehaviour:
   _checkerSize: {x: 0.5, y: 0.2}
   _whatIsGround:
     serializedVersion: 2
-    m_Bits: 64
+    m_Bits: 192
   IsGround:
     _value: 0
 --- !u!1 &4398094020360783071
@@ -368,7 +384,7 @@ GameObject:
   - component: {fileID: 5023134961792305347}
   - component: {fileID: 5142869901694634922}
   - component: {fileID: 1831567003222512903}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: SpawnChecker
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -11,6 +11,8 @@ public class IdleState : State
     public override void Enter()
     {
         base.Enter();
+        if (_groundChecker.IsGround.Value)
+            _playerMovement.RbCompo.velocity = Vector2.zero;
     }
 
     public override void StateUpdate()
