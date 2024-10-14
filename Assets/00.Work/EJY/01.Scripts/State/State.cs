@@ -47,8 +47,6 @@ public abstract class State
 
     public virtual void StateFixedUpdate()
     {
-        if (_playerMovement.RbCompo.velocity.y < 0 && !_groundChecker.IsGround.Value)
-            _stateMachine.ChageState(PlayerStateEnum.Fall);
     }
 
     public virtual void Exit()

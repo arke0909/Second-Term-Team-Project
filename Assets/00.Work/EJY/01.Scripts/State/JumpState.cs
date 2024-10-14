@@ -14,10 +14,38 @@ public class JumpState : WalkState
         _playerMovement.Jump();
     }
 
-    
+    public override void StateUpdate()
+    {
+        CalculatorInAirTime();
+        ApplyExtraGravity();
+
+        if (_playerMovement.RbCompo.velocity.y < 0)
+            _stateMachine.ChageState(PlayerStateEnum.Fall);
+    }
+
+    public override void StateFixedUpdate()
+    {
+        _playerMovement.Movement();
+    }
 
     public override void Exit()
     {
         base.Exit();
+    }
+
+    private void ApplyExtraGravity()
+    {
+        if (_playerMovement.timeInAir > _playerMovement.gravityDelay)
+        {
+            _playerMovement.RbCompo.AddForce(new Vector2(0, -_playerMovement.extraGravity));
+        }
+    }
+
+    private void CalculatorInAirTime()
+    {
+        if (!_groundChecker.IsGround.Value)
+            _playerMovement.timeInAir += Time.deltaTime;
+        else
+            _playerMovement.timeInAir = 0;
     }
 }

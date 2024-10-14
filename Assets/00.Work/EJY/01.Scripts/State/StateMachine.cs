@@ -13,8 +13,10 @@ public class StateMachine : MonoBehaviour, IPlayerComponent
     private void Awake()
     {
         _playerState = new Dictionary<PlayerStateEnum, State>();
+    }
 
-
+    private void Start()
+    {
         CreateState();
 
         ChageState(PlayerStateEnum.Idle);
@@ -44,7 +46,8 @@ public class StateMachine : MonoBehaviour, IPlayerComponent
             string enumName = state.ToString();
             Type t = Type.GetType(enumName + "State");
 
-            State playerState = Activator.CreateInstance(t, this, "Player" + enumName) as State;
+            State playerState = Activator.CreateInstance(t, _player, "Player" + enumName, this) as State;
+
             _playerState.Add(state, playerState);
         }
     }

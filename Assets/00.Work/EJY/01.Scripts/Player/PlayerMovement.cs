@@ -7,11 +7,13 @@ public class PlayerMovement : MonoBehaviour, IPlayerComponent
 {
     [SerializeField] private float _moveSpeed;
     [SerializeField] private float _jumpPower;
-    
-    public Rigidbody2D RbCompo { get; private set; }
 
     private Player _player;
     private InputReaderSO _input;
+    public Rigidbody2D RbCompo { get; private set; }
+
+    public float timeInAir;
+    public float extraGravity = 20f, gravityDelay = 0.15f;
 
     public void Initialize(Player player)
     {
@@ -20,10 +22,10 @@ public class PlayerMovement : MonoBehaviour, IPlayerComponent
         RbCompo = GetComponent<Rigidbody2D>();
         _input = _player.GetCompo<InputReaderSO>();
     }
-    public void Movement(Vector2 moveDir)
+    public void Movement()
     {
+        Vector2 moveDir = _input.MoveDir;
         RbCompo.velocity = new Vector2(moveDir.x * _moveSpeed, RbCompo.velocity.y);
-        Debug.Log(moveDir);
     }
 
     public void Jump()    

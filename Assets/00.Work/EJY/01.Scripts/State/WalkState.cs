@@ -17,11 +17,11 @@ public class WalkState : State
     {
         if (_inputReader.MoveDir.x == 0 && _groundChecker.IsGround.Value)
             _stateMachine.ChageState(PlayerStateEnum.Idle);
-        _playerMovement.Movement(_inputReader.MoveDir);
     }
 
     public override void StateFixedUpdate()
     {
+        _playerMovement.Movement();
     }
 
     public override void Exit()
