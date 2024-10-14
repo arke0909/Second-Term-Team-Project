@@ -7,6 +7,7 @@ using UnityEngine;
 public abstract class State
 {
     protected Player _player;
+    protected StateMachine _stateMachine;
     protected int _animaHash;
 
     #region PlayerComponentRegion
@@ -16,9 +17,10 @@ public abstract class State
     protected GroundChecker _groundChecker;
     #endregion
 
-    public State(Player player, string animaName)
+    public State(Player player, string animaName, StateMachine stateMachine)
     {
         _player = player;
+        _stateMachine = stateMachine;
         _animaHash = Animator.StringToHash(animaName);
 
         _animator = _player.GetCompo<PlayerAnimation>();
@@ -30,7 +32,7 @@ public abstract class State
     private void HandleChangeJumpState()
     {
         if (_groundChecker.IsGround.Value)
-            _player.ChageState(PlayerStateEnum.Jump);
+            _stateMachine.ChageState(PlayerStateEnum.Jump);
     }
 
     public virtual void Enter()
@@ -46,7 +48,7 @@ public abstract class State
     public virtual void StateFixedUpdate()
     {
         if (_playerMovement.RbCompo.velocity.y < 0 && !_groundChecker.IsGround.Value)
-            _player.ChageState(PlayerStateEnum.Fall);
+            _stateMachine.ChageState(PlayerStateEnum.Fall);
     }
 
     public virtual void Exit()
