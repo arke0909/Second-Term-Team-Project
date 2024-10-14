@@ -17,6 +17,7 @@ public class CloudScripts : MonoBehaviour
         if (collision.tag == "Cloud")
         {
             rb.velocity = new Vector2(rb.velocity.x, power);
+            Debug.Log("yy");
         }
     }
 
