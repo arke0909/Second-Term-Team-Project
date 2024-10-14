@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class WalkState : State
 {
-    public WalkState(Player player, string animaName) : base(player, animaName)
+    public WalkState(Player player, string animaName, StateMachine stateMachine) : base(player, animaName, stateMachine)
     {
     }
 
@@ -16,7 +16,7 @@ public class WalkState : State
     public override void StateUpdate()
     {
         if (_inputReader.MoveDir.x == 0 && _groundChecker.IsGround.Value)
-            _player.ChageState(PlayerStateEnum.Idle);
+            _stateMachine.ChageState(PlayerStateEnum.Idle);
         _playerMovement.Movement(_inputReader.MoveDir);
     }
 

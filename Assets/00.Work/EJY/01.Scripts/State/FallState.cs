@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class FallState : WalkState
 {
-    public FallState(Player player, string animaName) : base(player, animaName)
+    public FallState(Player player, string animaName, StateMachine stateMachine) : base(player, animaName, stateMachine)
     {
     }
 
@@ -17,7 +17,7 @@ public class FallState : WalkState
     private void HandleIsGroundChange(bool prev, bool next)
     {
         if (next)
-            _player.ChageState(PlayerStateEnum.Idle);
+            _stateMachine.ChageState(PlayerStateEnum.Idle);
     }
 
     public override void Exit()
