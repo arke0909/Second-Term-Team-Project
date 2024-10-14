@@ -34,6 +34,21 @@ public class PushBlockScript : MonoBehaviour
         }
     }
 
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.transform.tag == "Player")
+        {
+            StartCoroutine(StartDelay());
+        }
+    }
+
+    private IEnumerator StartDelay()
+    {
+        yield return new WaitForSeconds(5f);
+        gameObject.SetActive(false);
+    }
+
+
     void OnDrawGizmos()
     {
         Gizmos.color = new Color(1f, 0f, 0f, 0.1f);
