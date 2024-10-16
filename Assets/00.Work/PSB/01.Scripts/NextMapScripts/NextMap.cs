@@ -18,7 +18,6 @@ public class NextMap : MonoBehaviour
     {
         if (collision.tag == "NextMapBlock")
         {
-            Debug.Log(1);
             _playerCollider.transform.parent.position = new Vector3(_playerCollider.transform.position.x, _playerCollider.transform.position.y + 5,
                 _playerCollider.transform.position.z);
             
