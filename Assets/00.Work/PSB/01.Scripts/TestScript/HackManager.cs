@@ -10,11 +10,11 @@ public class HackManager : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Alpha1))
         {
-            player.transform.position = new Vector2(4.57f, 21.21f);
+            player.transform.position = new Vector2(player.transform.position.x + 5, player.transform.position.y);
         }
         if (Input.GetKeyDown(KeyCode.Alpha2))
         {
-            player.transform.position = new Vector2(45.78f, 30.48f);
+            player.transform.position = new Vector2(player.transform.position.x, player.transform.position.y + 2);
         }
     }
 
