@@ -179,7 +179,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7f3ee83624e218e44bd34fbb79511ecb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _checkerSize: {x: 0.5, y: 0.2}
+  _checkerSize: {x: 0.4, y: 0.2}
   _whatIsGround:
     serializedVersion: 2
     m_Bits: 64
