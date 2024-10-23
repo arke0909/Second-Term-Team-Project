@@ -93,7 +93,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _moveSpeed: 3
-  _jumpPower: 7
+  _jumpPower: 9
   timeInAir: 0
   extraGravity: 4
   gravityDelay: 0.15
