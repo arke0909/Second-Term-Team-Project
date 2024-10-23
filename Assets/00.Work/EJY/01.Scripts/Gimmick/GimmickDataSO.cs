@@ -2,12 +2,12 @@ using UnityEngine;
 
 public enum GimmickType
 {
-    Prefab, None
+    Instantiate, EnableCompo, None
 }
 
 [CreateAssetMenu(menuName = "SO/Gimmick/DataSO")]
 public class GimmickDataSO : ScriptableObject
 {
-    public GameObject originObject;
+    public GimmickType type;
     public Gimmick gimmickPrefab;
 }
