@@ -3333,6 +3333,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 1961942517915531713, guid: 64f84be795dba0d4a9b7fcaacd828697, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: a598eea6f621ddb488bbdd773e042d17, type: 2}
+    - target: {fileID: 3324983039812957778, guid: 64f84be795dba0d4a9b7fcaacd828697, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -1156094325, guid: 8b9b0dc67b642cb4a8b4f481ff970340, type: 3}
     - target: {fileID: 8937334172897358955, guid: 64f84be795dba0d4a9b7fcaacd828697, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
