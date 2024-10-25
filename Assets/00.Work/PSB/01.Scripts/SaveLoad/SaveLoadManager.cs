@@ -63,7 +63,7 @@ public class SaveLoadManager : MonoBehaviour
         Debug.Log("success2");
         string json = JsonUtility.ToJson(playerData);
         File.WriteAllText(filePath, json);
-        Debug.Log("Player data saved: " + json);
+        Debug.Log("Player list saved: " + json);
     }
 
     /// <summary>
@@ -78,11 +78,11 @@ public class SaveLoadManager : MonoBehaviour
             
             // 플레이어 위치 업데이트
             player.position = new Vector3(playerData.x, playerData.y, player.position.z);
-            Debug.Log("Player data loaded: " + json);
+            Debug.Log("Player list loaded: " + json);
         }
         else
         {
-            Debug.LogWarning("Player data file not found.");
+            Debug.LogWarning("Player list file not found.");
         }
     }
 
