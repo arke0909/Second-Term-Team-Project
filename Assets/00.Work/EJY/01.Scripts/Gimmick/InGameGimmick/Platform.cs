@@ -12,4 +12,13 @@ public class Platform : Gimmick
     {
         transform.DOMoveX(transform.position.x + _endValue, _duration).SetLoops(1,LoopType.Yoyo);
     }
+
+    public override bool Check()
+    {
+        return true;
+    }
+
+    public override void Initialzie()
+    {
+    }
 }
