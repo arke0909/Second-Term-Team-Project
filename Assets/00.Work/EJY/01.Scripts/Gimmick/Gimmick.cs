@@ -2,10 +2,15 @@ using UnityEngine;
 
 public abstract class Gimmick : MonoBehaviour
 {
-    public virtual bool ActivatedGimmcik()
+    private void Update()
     {
-        return true;
+        if(Check())
+            EffectGimmick();
     }
+
+    public abstract void Initialzie();
+
+    public abstract bool Check();
 
     public abstract void EffectGimmick();
 }
