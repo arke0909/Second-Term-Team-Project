@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
 
@@ -7,6 +5,8 @@ public class Platform : Gimmick
 {
     [SerializeField] private float _endValue;
     [SerializeField] private float _duration;
+    [SerializeField] private float _radius;
+    [SerializeField] private LayerMask _whatIsPlayer;
 
     public override void EffectGimmick()
     {
@@ -15,7 +15,8 @@ public class Platform : Gimmick
 
     public override bool Check()
     {
-        return true;
+        Collider2D checkPlayer = Physics2D.OverlapCircle(transform.position, _radius, _whatIsPlayer);
+        return checkPlayer;
     }
 
     public override void Initialzie()
