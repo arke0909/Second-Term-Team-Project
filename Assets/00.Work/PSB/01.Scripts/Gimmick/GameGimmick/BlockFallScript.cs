@@ -2,54 +2,50 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class JumpGimmick : Gimmick
+public class BlockFallScript : Gimmick
 {
     [Header("Player")]
     [SerializeField] private GameObject player;
     [SerializeField] private Rigidbody2D playerRb;
     [Header("Prefabs")]
-    [SerializeField] private GameObject prefab;
+    [SerializeField] private GameObject fallBlocckPrefab;
     [SerializeField] private GameObject grid;
-    public float spawnHeight = 1f;
+    [SerializeField] private Rigidbody2D gridRb;
     [Header("Value")]
-    private bool hasSpawned = false;
+    private bool isFalled = false;
     [Header("Gizmos")]
     public Vector2 range = new Vector2(5f, 5f);
 
-
     public override void Initialzie()
     {
-        hasSpawned = false;
+        isFalled = false;
         player = GameObject.FindGameObjectWithTag("Player");
+        grid = GameObject.FindGameObjectWithTag("FallObject");
         if (player != null)
         {
             playerRb = player.GetComponent<Rigidbody2D>();
         }
+        if (grid != null)
+        {
+            gridRb = grid.GetComponent<Rigidbody2D>();
+        }
+        gridRb.gravityScale = 0f;
     }
 
     public override bool Check()
     {
-        return true; 
+        return true;
     }
 
     public override void EffectGimmick()
     {
-        if (hasSpawned == false && playerRb != null && playerRb.velocity.y > 0 && IsPlayerInRange())
+        if (IsPlayerInRange())
         {
-            Instantiate(prefab, transform.position + new Vector3(0, spawnHeight, 0), Quaternion.identity);
-            hasSpawned = true;
-            /*if (grid != null)
-            {
-                grid.SetActive(true);
-            }*/
+            isFalled = true;
+            gridRb.gravityScale = 7f;
         }
-
     }
 
-    /// <summary>
-    /// 범위 내에 있는지를 체크하는 메서드
-    /// </summary>
-    /// <returns></returns>
     private bool IsPlayerInRange()
     {
         if (playerRb != null)
@@ -70,6 +66,5 @@ public class JumpGimmick : Gimmick
         Vector2 gizmoPosition = (Vector2)transform.position;
         Gizmos.DrawWireCube(transform.position, new Vector3(range.x, range.y, 1f));
     }
-
 
 }

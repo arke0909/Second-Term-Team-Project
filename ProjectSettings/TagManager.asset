@@ -4,12 +4,8 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - SpawnPoint
   - PlayerCollider
-  - PushBlock
-  - DeathBlock
-  - NextMapBlock
-  - Cloud
+  - FallObject
   layers:
   - Default
   - TransparentFX
