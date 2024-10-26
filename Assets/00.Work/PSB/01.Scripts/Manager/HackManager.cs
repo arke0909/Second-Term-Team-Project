@@ -5,6 +5,7 @@ using UnityEngine;
 public class HackManager : MonoBehaviour
 {
     [SerializeField] private GameObject player;
+    [SerializeField] private Transform playerTrans;
 
     private void Update()
     {
@@ -14,7 +15,8 @@ public class HackManager : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.Alpha2))
         {
-            player.transform.position = new Vector2(player.transform.position.x, player.transform.position.y + 2);
+            Debug.Log(22);
+            player.transform.position = new Vector2(playerTrans.position.x, playerTrans.position.y);
         }
     }
 
