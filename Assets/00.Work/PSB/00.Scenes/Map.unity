@@ -602,7 +602,6 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 732274988}
-  - {fileID: 1212425613}
   - {fileID: 624657361}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -621,6 +620,24 @@ Rigidbody2D:
   m_CorrespondingSourceObject: {fileID: 7558613522432794082, guid: 170d2ed8400e86c4da81e4b0b85bcdf6, type: 3}
   m_PrefabInstance: {fileID: 6781433510065610855}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &213306013
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 213306004}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 80ab5361af8c52a489792e5882bf0c8c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 1710710443}
+  playerRb: {fileID: 2146824295}
+  fallBlocckPrefab: {fileID: 3920602632313138612, guid: 170d2ed8400e86c4da81e4b0b85bcdf6, type: 3}
+  grid: {fileID: 213306004}
+  gridRb: {fileID: 213306008}
+  range: {x: 0, y: 0}
 --- !u!1 &314820553
 GameObject:
   m_ObjectHideFlags: 0
@@ -1003,7 +1020,7 @@ Transform:
   m_GameObject: {fileID: 624657360}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 8.32, y: 0.75, z: 0}
+  m_LocalPosition: {x: 7.93, y: 0.75, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1208,7 +1225,7 @@ MonoBehaviour:
   playerRb: {fileID: 2146824295}
   prefab: {fileID: 9192066310816791435, guid: 62f3df8897b8e82478e810bc51ef4cae, type: 3}
   grid: {fileID: 1185876401}
-  spawnHeight: -0.2
+  spawnHeight: -0.4
   range: {x: 0.2, y: 5}
 --- !u!1 &830723239
 GameObject:
@@ -1351,8 +1368,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 1710710443}
   playerTrans: {fileID: 1545245063}
-  rock: {fileID: 1028723997}
-  rockRb: {fileID: 1028724000}
 --- !u!1 &931185852
 GameObject:
   m_ObjectHideFlags: 0
@@ -2629,56 +2644,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 9192066310816791435, guid: 62f3df8897b8e82478e810bc51ef4cae, type: 3}
   m_PrefabInstance: {fileID: 43058324}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1212425612
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1212425613}
-  - component: {fileID: 1212425615}
-  m_Layer: 0
-  m_Name: FallGimmickTest
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1212425613
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1212425612}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 6.65, y: 0.49, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 191097515}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1212425615
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1212425612}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 80ab5361af8c52a489792e5882bf0c8c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  player: {fileID: 1710710443}
-  playerRb: {fileID: 2146824295}
-  fallBlocckPrefab: {fileID: 3920602632313138612, guid: 170d2ed8400e86c4da81e4b0b85bcdf6, type: 3}
-  grid: {fileID: 213306004}
-  gridRb: {fileID: 213306008}
-  range: {x: 0.2, y: 5}
 --- !u!1 &1387938838
 GameObject:
   m_ObjectHideFlags: 0
@@ -3795,7 +3760,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3920602632313138612, guid: 170d2ed8400e86c4da81e4b0b85bcdf6, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 213306013}
   m_SourcePrefab: {fileID: 100100000, guid: 170d2ed8400e86c4da81e4b0b85bcdf6, type: 3}
 --- !u!1001 &8558470853170506817
 PrefabInstance:
@@ -3809,13 +3777,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: Rock
       objectReference: {fileID: 0}
+    - target: {fileID: 1032837888792938381, guid: 286270299b9527e4bb82e72db7fe79e6, type: 3}
+      propertyPath: m_Mass
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 7731533501628708045, guid: 286270299b9527e4bb82e72db7fe79e6, type: 3}
       propertyPath: m_LocalPosition.x
       value: 8.53
       objectReference: {fileID: 0}
     - target: {fileID: 7731533501628708045, guid: 286270299b9527e4bb82e72db7fe79e6, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 5.61
+      value: 4.25
       objectReference: {fileID: 0}
     - target: {fileID: 7731533501628708045, guid: 286270299b9527e4bb82e72db7fe79e6, type: 3}
       propertyPath: m_LocalPosition.z

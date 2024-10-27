@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Tilemaps;
 
 public class BlockFallGimmick : Gimmick
 {
@@ -39,10 +40,15 @@ public class BlockFallGimmick : Gimmick
 
     public override void EffectGimmick()
     {
-        if (IsPlayerInRange())
+        
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Player"))
         {
+            gridRb.gravityScale = 5f;
             isFalled = true;
-            gridRb.gravityScale = 7f;
         }
     }
 
