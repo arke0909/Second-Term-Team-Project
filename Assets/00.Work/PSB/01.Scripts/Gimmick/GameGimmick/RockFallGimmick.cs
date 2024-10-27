@@ -2,14 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BlockFallScript : Gimmick
+public class RockFallGimmick : Gimmick
 {
+
     [Header("Player")]
     [SerializeField] private GameObject player;
     [SerializeField] private Rigidbody2D playerRb;
     [Header("Prefabs")]
-    [SerializeField] private GameObject fallBlocckPrefab;
-    [SerializeField] private GameObject grid;
+    [SerializeField] private GameObject rockGimmickPrefab;
+    [SerializeField] private GameObject rockGrid;
     [SerializeField] private Rigidbody2D gridRb;
     [Header("Value")]
     private bool isFalled = false;
@@ -20,14 +21,14 @@ public class BlockFallScript : Gimmick
     {
         isFalled = false;
         player = GameObject.FindGameObjectWithTag("Player");
-        grid = GameObject.FindGameObjectWithTag("FallObject");
+        rockGrid = GameObject.FindGameObjectWithTag("FallObject");
         if (player != null)
         {
             playerRb = player.GetComponent<Rigidbody2D>();
         }
-        if (grid != null)
+        if (rockGrid != null)
         {
-            gridRb = grid.GetComponent<Rigidbody2D>();
+            gridRb = rockGrid.GetComponent<Rigidbody2D>();
         }
         gridRb.gravityScale = 0f;
     }
@@ -66,5 +67,4 @@ public class BlockFallScript : Gimmick
         Vector2 gizmoPosition = (Vector2)transform.position;
         Gizmos.DrawWireCube(transform.position, new Vector3(range.x, range.y, 1f));
     }
-
 }
