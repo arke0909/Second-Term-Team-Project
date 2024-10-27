@@ -6,6 +6,13 @@ public class HackManager : MonoBehaviour
 {
     [SerializeField] private GameObject player;
     [SerializeField] private Transform playerTrans;
+    [SerializeField] private GameObject rock;
+    [SerializeField] private Rigidbody2D rockRb;
+
+    private void Start()
+    {
+        rockRb = rock.GetComponent<Rigidbody2D>();
+    }
 
     private void Update()
     {
@@ -15,8 +22,11 @@ public class HackManager : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.Alpha2))
         {
-            Debug.Log(22);
             player.transform.position = new Vector2(playerTrans.position.x, playerTrans.position.y);
+        }
+        if (Input.GetKeyDown(KeyCode.Alpha3))
+        {
+            rockRb.gravityScale = 7f;
         }
     }
 
