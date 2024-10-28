@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Tilemaps;
 
 public class BlockFallGimmick : Gimmick
 {
@@ -20,16 +19,15 @@ public class BlockFallGimmick : Gimmick
     public override void Initialzie()
     {
         isFalled = false;
+
         player = GameObject.FindGameObjectWithTag("Player");
         grid = GameObject.FindGameObjectWithTag("FallObject");
+        
         if (player != null)
-        {
             playerRb = player.GetComponent<Rigidbody2D>();
-        }
         if (grid != null)
-        {
             gridRb = grid.GetComponent<Rigidbody2D>();
-        }
+
         gridRb.gravityScale = 0f;
     }
 
@@ -47,7 +45,7 @@ public class BlockFallGimmick : Gimmick
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            gridRb.gravityScale = 5f;
+            gridRb.gravityScale = 4f;
             isFalled = true;
         }
     }
