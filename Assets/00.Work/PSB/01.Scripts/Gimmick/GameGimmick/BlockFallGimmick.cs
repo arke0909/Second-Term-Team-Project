@@ -38,7 +38,7 @@ public class BlockFallGimmick : Gimmick, IIntializable
 
     public override void EffectGimmick()
     {
-        
+        base.EffectGimmick();
     }
 
     private void OnCollisionEnter2D(Collision2D collision)

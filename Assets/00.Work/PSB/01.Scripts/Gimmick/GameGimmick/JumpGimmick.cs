@@ -39,12 +39,8 @@ public class JumpGimmick : Gimmick, IInitializable
         {
             Instantiate(prefab, transform.position + new Vector3(0, spawnHeight, 0), Quaternion.identity);
             hasSpawned = true;
-            /*if (grid != null)
-            {
-                grid.SetActive(true);
-            }*/
         }
-
+        base.EffectGimmick();
     }
 
     /// <summary>

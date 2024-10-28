@@ -17,6 +17,7 @@ public class MovePlatform : Gimmick, IIntializable
             transform.DOMoveX(transform.position.x + _value, _duration).SetLoops(-1, LoopType.Yoyo).SetEase(Ease.Linear);
             _isEnd = true;
         }
+        base.EffectGimmick();
     }
 
     public override bool Check()
