@@ -14,7 +14,7 @@ public class MovePlatform : Gimmick
     {
         if (_isEnd == false)
         {
-            transform.DOMoveX(transform.position.x + _value, _duration).SetLoops(-1, LoopType.Yoyo);
+            transform.DOMoveX(transform.position.x + _value, _duration).SetLoops(-1, LoopType.Yoyo).SetEase(Ease.Linear);
             _isEnd = true;
         }
     }
