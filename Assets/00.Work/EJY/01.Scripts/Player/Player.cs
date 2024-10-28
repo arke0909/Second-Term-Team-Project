@@ -19,6 +19,8 @@ public class Player : MonoBehaviour
 
     private StateMachine _stateMachine;
 
+    public bool IsDead { get; private set; } = false;
+
     private void Awake()
     {
         _stateMachine = GetComponent<StateMachine>();
