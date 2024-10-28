@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class Monosingleton<T> : MonoBehaviour where T : MonoBehaviour
 {
-    private T _instance = null;
-    public T Instance => _instance;
+    private static T _instance = null;
+    public static T Instance => _instance;
 
     protected virtual void Awake()
     {

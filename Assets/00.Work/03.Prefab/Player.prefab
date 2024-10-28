@@ -90,7 +90,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 679adbacc10c3d24fa388430aa9fc1ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _moveSpeed: 3
+  _moveSpeed: 5
   _jumpPower: 9
   timeInAir: 0
   extraGravity: 4
