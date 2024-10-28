@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BlockFallGimmick : Gimmick
+public class BlockFallGimmick : Gimmick, IIntializable
 {
     [Header("Player")]
     [SerializeField] private GameObject player;
@@ -16,7 +16,7 @@ public class BlockFallGimmick : Gimmick
     [Header("Gizmos")]
     public Vector2 range = new Vector2(5f, 5f);
 
-    public override void Initialzie()
+    public void Initialzie()
     {
         isFalled = false;
 
