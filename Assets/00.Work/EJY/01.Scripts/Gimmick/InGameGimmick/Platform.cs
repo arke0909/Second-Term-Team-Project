@@ -24,10 +24,6 @@ public class Platform : Gimmick
         return checkPlayer;
     }
 
-    public override void Initialzie()
-    {
-    }
-
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.yellow;
