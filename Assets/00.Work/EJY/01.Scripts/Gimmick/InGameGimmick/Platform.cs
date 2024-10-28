@@ -1,5 +1,6 @@
 using UnityEngine;
 using DG.Tweening;
+using UnityEngine.UIElements.Experimental;
 
 public class Platform : Gimmick
 {
@@ -10,7 +11,11 @@ public class Platform : Gimmick
 
     public override void EffectGimmick()
     {
-        transform.DOMoveX(transform.position.x + _endValue, _duration).SetLoops(1,LoopType.Yoyo);
+        transform.DOMoveX(transform.position.x + _endValue, _duration)
+            .SetLoops(1,LoopType.Yoyo)
+            .SetEase(Ease.Linear);
+
+        base.EffectGimmick();
     }
 
     public override bool Check()
@@ -21,5 +26,11 @@ public class Platform : Gimmick
 
     public override void Initialzie()
     {
+    }
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.yellow;
+        Gizmos.DrawWireSphere(transform.position, _radius);
     }
 }
