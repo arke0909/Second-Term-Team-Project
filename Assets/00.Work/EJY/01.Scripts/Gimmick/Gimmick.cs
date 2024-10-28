@@ -9,8 +9,6 @@ public abstract class Gimmick : MonoBehaviour
             EffectGimmick();
     }
 
-    public abstract void Initialzie();
-
     public abstract bool Check();
 
     public virtual void EffectGimmick()
