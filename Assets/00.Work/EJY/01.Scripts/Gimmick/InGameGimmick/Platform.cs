@@ -12,7 +12,7 @@ public class Platform : Gimmick
     public override void EffectGimmick()
     {
         transform.DOMoveX(transform.position.x + _endValue, _duration)
-            .SetLoops(1,LoopType.Yoyo)
+            .SetLoops(2,LoopType.Yoyo)
             .SetEase(Ease.Linear);
 
         base.EffectGimmick();
