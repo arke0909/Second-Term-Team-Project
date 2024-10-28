@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MovePlatform : Gimmick
+public class MovePlatform : Gimmick, IIntializable
 {
     [Header("Value")]
     [SerializeField] private float _value;
@@ -24,7 +24,7 @@ public class MovePlatform : Gimmick
         return true;
     }
 
-    public override void Initialzie()
+    public void Initialzie()
     {
         _isEnd = false;
     }

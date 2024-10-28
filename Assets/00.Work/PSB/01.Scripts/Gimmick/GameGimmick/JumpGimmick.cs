@@ -1,8 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
-public class JumpGimmick : Gimmick
+public class JumpGimmick : Gimmick, IInitializable
 {
     [Header("Player")]
     [SerializeField] private GameObject player;
@@ -17,7 +18,7 @@ public class JumpGimmick : Gimmick
     public Vector2 range = new Vector2(5f, 5f);
 
 
-    public override void Initialzie()
+    public void Initialize()
     {
         hasSpawned = false;
         player = GameObject.FindGameObjectWithTag("Player");

@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class RockFallGimmick : Gimmick
+public class RockFallGimmick : Gimmick, IIntializable
 {
 
     [Header("Player")]
@@ -17,7 +17,7 @@ public class RockFallGimmick : Gimmick
     [Header("Gizmos")]
     public Vector2 range = new Vector2(5f, 5f);
 
-    public override void Initialzie()
+    public void Initialzie()
     {
         isFalled = false;
         player = GameObject.FindGameObjectWithTag("Player");
