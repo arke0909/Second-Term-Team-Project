@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -20,6 +21,10 @@ public class GimmickManager : Monosingleton<GimmickManager>
             if (item.type == GimmickType.EnableCompo)
             {
                 GameObject prefab = Instantiate(item.gimmickPrefab.gameObject);
+            }
+            else if(item is IInitializable init)
+            {
+                init.Initialize();
             }
             else
                 continue;
