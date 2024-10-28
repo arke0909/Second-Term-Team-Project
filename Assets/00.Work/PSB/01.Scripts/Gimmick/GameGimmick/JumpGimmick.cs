@@ -17,6 +17,15 @@ public class JumpGimmick : Gimmick, IInitializable
     [Header("Gizmos")]
     public Vector2 range = new Vector2(5f, 5f);
 
+    private void Start()
+    {
+        hasSpawned = false;
+        player = GameObject.FindGameObjectWithTag("Player");
+        if (player != null)
+        {
+            playerRb = player.GetComponent<Rigidbody2D>();
+        }
+    }
 
     public void Initialize()
     {
@@ -40,7 +49,7 @@ public class JumpGimmick : Gimmick, IInitializable
             Instantiate(prefab, transform.position + new Vector3(0, spawnHeight, 0), Quaternion.identity);
             hasSpawned = true;
         }
-        base.EffectGimmick();
+        //base.EffectGimmick();
     }
 
     /// <summary>

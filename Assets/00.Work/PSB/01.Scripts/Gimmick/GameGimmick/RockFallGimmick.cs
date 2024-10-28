@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class RockFallGimmick : Gimmick, IIntializable
 {
-
     [Header("Player")]
     [SerializeField] private GameObject player;
     [SerializeField] private Rigidbody2D playerRb;
@@ -20,8 +19,10 @@ public class RockFallGimmick : Gimmick, IIntializable
     public void Initialzie()
     {
         isFalled = false;
+
         player = GameObject.FindGameObjectWithTag("Player");
         rockGrid = GameObject.FindGameObjectWithTag("FallObject");
+
         if (player != null)
         {
             playerRb = player.GetComponent<Rigidbody2D>();
@@ -30,6 +31,7 @@ public class RockFallGimmick : Gimmick, IIntializable
         {
             gridRb = rockGrid.GetComponent<Rigidbody2D>();
         }
+
         gridRb.gravityScale = 0f;
     }
 
@@ -45,7 +47,7 @@ public class RockFallGimmick : Gimmick, IIntializable
             isFalled = true;
             gridRb.gravityScale = 4f;
         }
-        base.EffectGimmick();
+        //base.EffectGimmick();
     }
 
     private bool IsPlayerInRange()
