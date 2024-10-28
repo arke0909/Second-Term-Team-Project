@@ -19,16 +19,15 @@ public class BlockFallGimmick : Gimmick
     public override void Initialzie()
     {
         isFalled = false;
+
         player = GameObject.FindGameObjectWithTag("Player");
         grid = GameObject.FindGameObjectWithTag("FallObject");
+        
         if (player != null)
-        {
             playerRb = player.GetComponent<Rigidbody2D>();
-        }
         if (grid != null)
-        {
             gridRb = grid.GetComponent<Rigidbody2D>();
-        }
+
         gridRb.gravityScale = 0f;
     }
 
@@ -39,10 +38,15 @@ public class BlockFallGimmick : Gimmick
 
     public override void EffectGimmick()
     {
-        if (IsPlayerInRange())
+        
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Player"))
         {
+            gridRb.gravityScale = 4f;
             isFalled = true;
-            gridRb.gravityScale = 7f;
         }
     }
 
