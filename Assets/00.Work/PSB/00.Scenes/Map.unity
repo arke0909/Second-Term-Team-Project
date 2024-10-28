@@ -1368,6 +1368,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 1710710443}
   playerTrans: {fileID: 1545245063}
+  grid: {fileID: 1504693112}
 --- !u!1 &931185852
 GameObject:
   m_ObjectHideFlags: 0

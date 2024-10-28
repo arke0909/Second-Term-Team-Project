@@ -43,7 +43,7 @@ public class RockFallGimmick : Gimmick
         if (IsPlayerInRange())
         {
             isFalled = true;
-            gridRb.gravityScale = 7f;
+            gridRb.gravityScale = 4f;
         }
     }
 
