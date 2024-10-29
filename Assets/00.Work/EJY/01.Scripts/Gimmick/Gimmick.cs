@@ -5,6 +5,7 @@ public abstract class Gimmick : MonoBehaviour
     protected bool used = false;
     private void Update()
     {
+        
         if(Check() && used == false)
             EffectGimmick();
     }
