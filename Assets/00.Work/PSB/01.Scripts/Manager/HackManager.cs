@@ -14,7 +14,7 @@ public class HackManager : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Alpha1))
         {
-            player.transform.position = new Vector2(player.transform.position.x + 5, player.transform.position.y);
+            player.SetActive(true);
         }
         if (Input.GetKeyDown(KeyCode.Alpha2))
         {
@@ -31,6 +31,10 @@ public class HackManager : MonoBehaviour
             Vector3 rot = grid.transform.rotation.eulerAngles;
             rot.z = 0;
             grid.transform.rotation = Quaternion.Euler(rot);
+        }
+        if (Input.GetKeyDown(KeyCode.Alpha5))
+        {
+            player.transform.position = new Vector2(player.transform.position.x + 5, player.transform.position.y);
         }
     }
 
