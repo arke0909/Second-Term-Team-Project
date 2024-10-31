@@ -16,7 +16,7 @@ public class BlockFallGimmick : Gimmick, IIntializable
     [Header("Gizmos")]
     public Vector2 range = new Vector2(5f, 5f);
 
-    private void Start()
+    /*private void Start()
     {
         isFalled = false;
 
@@ -29,7 +29,7 @@ public class BlockFallGimmick : Gimmick, IIntializable
             gridRb = grid.GetComponent<Rigidbody2D>();
 
         gridRb.gravityScale = 0f;
-    }
+    }*/
 
     public void Initialzie()
     {
@@ -58,7 +58,7 @@ public class BlockFallGimmick : Gimmick, IIntializable
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("Player"))
+        if (collision.gameObject.layer == 8) //Player Layer
         {
             gridRb.gravityScale = 4f;
             isFalled = true;

@@ -23,14 +23,12 @@ public class HackManager : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Alpha3))
         {
             Vector3 rot = grid.transform.rotation.eulerAngles;
-            rot.z = 180;
+            rot.x = 180;
             grid.transform.rotation = Quaternion.Euler(rot);
         }
         if (Input.GetKeyDown(KeyCode.Alpha4))
         {
-            Vector3 rot = grid.transform.rotation.eulerAngles;
-            rot.z = 0;
-            grid.transform.rotation = Quaternion.Euler(rot);
+            Debug.Log("Alpha4");
         }
         if (Input.GetKeyDown(KeyCode.Alpha5))
         {

@@ -45,7 +45,7 @@ public class RockFallGimmick : Gimmick, IIntializable
         if (IsPlayerInRange())
         {
             isFalled = true;
-            gridRb.gravityScale = 4f;
+            gridRb.gravityScale = 3f;
         }
         //base.EffectGimmick();
     }

@@ -27,6 +27,9 @@ public class ArrowGimmick : Gimmick, IIntializable
     {
         objCollider = GetComponent<Collider2D>();
         player = GameObject.FindGameObjectWithTag("Player");
+
+        
+
     }
 
     private void Update()
@@ -56,7 +59,7 @@ public class ArrowGimmick : Gimmick, IIntializable
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.tag == "Player")
+        if (collision.gameObject.layer == 8)  //Player Layer
         {
             player.SetActive(false);
         }
