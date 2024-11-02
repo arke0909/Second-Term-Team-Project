@@ -6875,6 +6875,7 @@ MonoBehaviour:
   _moveXY: 0
   _loopType: 1
   _ease: 1
+  _loopCnt: 0
   _endValue: 5
   _duration: 1
 --- !u!212 &2992098845509243159
