@@ -27,4 +27,6 @@ public class LeverGimmick : Gimmick, IInitializable
     {
         grid = FindAnyObjectByType<Grid>();
     }
+
+
 }
