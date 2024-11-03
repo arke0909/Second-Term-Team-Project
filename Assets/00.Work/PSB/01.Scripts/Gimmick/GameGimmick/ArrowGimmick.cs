@@ -28,8 +28,6 @@ public class ArrowGimmick : Gimmick, IIntializable
         objCollider = GetComponent<Collider2D>();
         player = GameObject.FindGameObjectWithTag("Player");
 
-        
-
     }
 
     private void Update()
