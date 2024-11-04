@@ -11,8 +11,6 @@ public class PlatformScale : Gimmick
 
     public override void EffectGimmick()
     {
-
-
         base.EffectGimmick();
     }
 }
