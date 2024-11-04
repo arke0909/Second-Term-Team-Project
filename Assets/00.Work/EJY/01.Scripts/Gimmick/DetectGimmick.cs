@@ -13,6 +13,6 @@ public abstract class DetectGimmick : Gimmick
 
     public override bool Check()
     {
-        return true;
+        throw new System.NotImplementedException();
     }
 }

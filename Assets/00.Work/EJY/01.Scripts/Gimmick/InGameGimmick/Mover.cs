@@ -1,6 +1,7 @@
 using UnityEngine;
 using DG.Tweening;
 using System;
+using UnityEngine.Rendering.UI;
 
 public class Mover : DetectGimmick
 {
@@ -9,7 +10,9 @@ public class Mover : DetectGimmick
     {
         X, Y
     }
+
     [Header("TweenInfo")]
+
     [SerializeField] private MoveXY _moveXY;
     [SerializeField] private LoopType _loopType;
     [SerializeField] private Ease _ease;
@@ -22,28 +25,31 @@ public class Mover : DetectGimmick
     protected override void Awake()
     {
         base.Awake();
+        SetXY();
+    }
 
+    private void SetXY()
+    {
         switch (_moveXY)
         {
             case MoveXY.X:
-                transform.DOMoveX(transform.position.x + _endValue, _duration);
+                _moveTween = transform.DOMoveX(transform.position.x + _endValue, _duration).SetLoops(_loopCnt, _loopType).SetEase(_ease).Pause();
                 break;
             case MoveXY.Y:
-                transform.DOMoveY(transform.position.y + _endValue, _duration);
+                _moveTween = transform.DOMoveY(transform.position.y + _endValue, _duration).SetLoops(_loopCnt, _loopType).SetEase(_ease).Pause();
                 break;
         }
     }
 
     public override void EffectGimmick()
     {
-        _moveTween.SetLoops(_loopCnt, _loopType)
-            .SetEase(_ease);
+        _moveTween.Play();
 
         base.EffectGimmick();
     }
 
     public override bool Check()
     {
-        return _detcter.CheckWhithOverlapBox();
+        return _detcter.CheckPlayer();
     }
 }
