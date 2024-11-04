@@ -1,7 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
 public abstract class DetectGimmick : Gimmick
 {
     protected GimmickDetector _detcter;
@@ -13,6 +9,6 @@ public abstract class DetectGimmick : Gimmick
 
     public override bool Check()
     {
-        throw new System.NotImplementedException();
+        return false;
     }
 }
