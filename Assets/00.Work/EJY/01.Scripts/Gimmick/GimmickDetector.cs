@@ -1,7 +1,7 @@
 using UnityEngine;
 public enum CheckType
 {
-    Ray, Overlap
+    Ray, Overlap, None
 }
 
 public  class GimmickDetector : MonoBehaviour
@@ -22,6 +22,8 @@ public  class GimmickDetector : MonoBehaviour
                 RaycastHit2D rayCheckPlayer = Physics2D.Raycast(transform.position, Vector2.up, _range, _whatIsPlayer);
                 return rayCheckPlayer;
 
+            case CheckType.None:
+                return true;
             default:
                 return false;
         }
@@ -36,7 +38,7 @@ public  class GimmickDetector : MonoBehaviour
                 Gizmos.DrawWireSphere(transform.position, _range);
                 break;
             case CheckType.Ray:
-                Gizmos.DrawRay(transform.position, Vector2.up);
+                Gizmos.DrawRay(transform.position, new Vector2(0, _range));
                 break;
         }
     }

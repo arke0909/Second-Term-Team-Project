@@ -1,7 +1,6 @@
 using UnityEngine;
 using DG.Tweening;
 using System;
-using UnityEngine.Rendering.UI;
 
 public class Mover : DetectGimmick
 {
