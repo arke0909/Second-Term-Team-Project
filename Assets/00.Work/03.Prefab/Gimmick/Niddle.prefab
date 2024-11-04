@@ -11,6 +11,8 @@ GameObject:
   - component: {fileID: 3567935963923780943}
   - component: {fileID: 7834672107648418031}
   - component: {fileID: 824664225032214898}
+  - component: {fileID: 6862876605818283122}
+  - component: {fileID: 8804163582337722973}
   m_Layer: 9
   m_Name: Niddle
   m_TagString: Untagged
@@ -114,7 +116,7 @@ PolygonCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -136,3 +138,38 @@ PolygonCollider2D:
       - {x: 0.5, y: -0.5}
       - {x: 0.41856742, y: 0.15375306}
   m_UseDelaunayMesh: 0
+--- !u!114 &6862876605818283122
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1842350020055606289}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a1c9c0d5e128fd8409a7cf198cd46bec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _moveXY: 0
+  _loopType: 1
+  _ease: 1
+  _loopCnt: 2
+  _endValue: 3
+  _duration: 1
+--- !u!114 &8804163582337722973
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1842350020055606289}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bba7dac5363579b4298a1e4624ef23ad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _checkType: 0
+  _range: 5
+  _whatIsPlayer:
+    serializedVersion: 2
+    m_Bits: 256
