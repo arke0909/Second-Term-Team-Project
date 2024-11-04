@@ -83,7 +83,7 @@ public class ArrowGimmick : Gimmick, IIntializable
         if (player != null)
         {
             Gizmos.color = Color.yellow;
-            Gizmos.DrawLine(transform.position, player.transform.position);
+            Gizmos.DrawWireSphere(transform.position, distanceValue);
         }
     }
 
