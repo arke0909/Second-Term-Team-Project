@@ -14,7 +14,7 @@ public class EnemyMove : MonoBehaviour
         rigid = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
         sprite = GetComponent<SpriteRenderer>();
-        Invoke("Think", 3);
+        Invoke("NextAction", 3);
     }
 
     private void FixedUpdate()
@@ -27,20 +27,19 @@ public class EnemyMove : MonoBehaviour
         RaycastHit2D rayHit = Physics2D.Raycast(frontVect, Vector3.down, 1, LayerMask.GetMask("Ground"));
         if (rayHit.collider == null)
         {
-            TurnEnemy();
+            FlipEnemy();
         }
-
     }
 
-    private void TurnEnemy()
+    private void FlipEnemy()
     {
         nextMove *= -1;
         sprite.flipX = nextMove == -1;
         CancelInvoke();
-        Invoke("Think", 3);
+        Invoke("NextAction", 3);
     }
 
-    private void Think()
+    private void NextAction()
     {
         nextMove = Random.Range(-1, 2);
 
@@ -52,7 +51,7 @@ public class EnemyMove : MonoBehaviour
         }
 
         float nextThinkTime = Random.Range(2f, 5f);
-        Invoke("Think", nextThinkTime);
+        Invoke("NextAction", nextThinkTime);
     }
 
 }

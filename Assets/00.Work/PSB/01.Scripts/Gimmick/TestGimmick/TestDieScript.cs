@@ -5,13 +5,13 @@ using UnityEngine;
 
 public class TestDieScript : Gimmick, IInitializable
 {
-    [SerializeField] private GameObject player;
+    [SerializeField] private GameObject dieObj;
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.layer == 8)  //Player Layer
         {
-            player.SetActive(false);
+            dieObj.SetActive(false);
         }
     }
 
@@ -22,6 +22,6 @@ public class TestDieScript : Gimmick, IInitializable
 
     public void Initialize()
     {
-        player = GameObject.FindGameObjectWithTag("Player");
+        dieObj = GameObject.FindGameObjectWithTag("Player");
     }
 }
