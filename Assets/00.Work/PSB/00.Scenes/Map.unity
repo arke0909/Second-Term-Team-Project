@@ -794,7 +794,6 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 390362869}
-  - {fileID: 427393330}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &330980670
@@ -932,7 +931,7 @@ MonoBehaviour:
   playerRB: {fileID: 2146824295}
   nextMove: 0
   speed: 4
-  _jumpPower: 6
+  _jumpPower: 8
 --- !u!1 &336274396
 GameObject:
   m_ObjectHideFlags: 0
@@ -1165,56 +1164,6 @@ MonoBehaviour:
   nextMove: 0
   speed: 4
   _jumpPower: 6
---- !u!1 &427393329
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 427393330}
-  - component: {fileID: 427393331}
-  m_Layer: 0
-  m_Name: GroundChecker
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &427393330
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 427393329}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.504, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 330980669}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &427393331
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 427393329}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7f3ee83624e218e44bd34fbb79511ecb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _checkerSize: {x: 1, y: 0.1}
-  _whatIsGround:
-    serializedVersion: 2
-    m_Bits: 64
-  IsGround:
-    _value: 0
 --- !u!1 &504508221
 GameObject:
   m_ObjectHideFlags: 0
