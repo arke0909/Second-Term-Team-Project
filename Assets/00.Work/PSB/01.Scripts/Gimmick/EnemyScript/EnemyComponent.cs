@@ -16,6 +16,7 @@ public class EnemyComponent : MonoBehaviour
     public int nextMove;
     public int speed = 4;
     public float _jumpPower = 6f;
+    protected bool isJumped = false;
 
     private void Awake()
     {
