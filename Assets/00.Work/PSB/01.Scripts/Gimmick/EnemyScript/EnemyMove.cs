@@ -2,13 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyMove : MonoBehaviour
+public class EnemyMove : EnemyComponent
 {
-    private Rigidbody2D rigid;
-    private Animator anim;
-    private SpriteRenderer sprite;
-    public int nextMove;
-
     private void Awake()
     {
         rigid = GetComponent<Rigidbody2D>();
@@ -21,7 +16,6 @@ public class EnemyMove : MonoBehaviour
     {
         rigid.velocity = new Vector2(nextMove, rigid.velocity.y);
 
-        //플랫포머 체크
         Vector2 frontVect = new Vector2(rigid.position.x + nextMove * 0.2f, rigid.position.y);
         Debug.DrawRay(frontVect, Vector3.down, new Color(0, 1, 0));
         RaycastHit2D rayHit = Physics2D.Raycast(frontVect, Vector3.down, 1, LayerMask.GetMask("Ground"));
@@ -34,20 +28,20 @@ public class EnemyMove : MonoBehaviour
     private void FlipEnemy()
     {
         nextMove *= -1;
-        sprite.flipX = nextMove == -1;
+        sprite.flipX = nextMove == -4;
         CancelInvoke();
         Invoke("NextAction", 3);
     }
 
-    private void NextAction()
+    public void NextAction()
     {
-        nextMove = Random.Range(-1, 2);
+        nextMove = speed;
 
-        anim.SetInteger("WalkSpeed", nextMove);
+        anim.SetInteger("WalkSpeed", nextMove *= -1);
 
         if (nextMove != 0)
         {
-            sprite.flipX = nextMove == -1;
+            sprite.flipX = nextMove == -4;
         }
 
         float nextThinkTime = Random.Range(2f, 5f);
