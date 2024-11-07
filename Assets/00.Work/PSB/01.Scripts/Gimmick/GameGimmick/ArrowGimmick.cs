@@ -19,9 +19,17 @@ public class ArrowGimmick : Gimmick, IIntializable
     private Vector2 direction;
 
     private bool isMove = false;
+
+    protected GimmickDetector _detcter;
+
+    protected virtual void Awake()
+    {
+        _detcter = GetComponent<GimmickDetector>();
+    }
+
     public override bool Check()
     {
-        return true;
+        return _detcter.CheckPlayer();
     }
     public void Initialzie()
     {
@@ -77,14 +85,4 @@ public class ArrowGimmick : Gimmick, IIntializable
     {
         transform.position += (Vector3)direction * arrowSpeed * Time.deltaTime;
     }
-
-    private void OnDrawGizmos()
-    {
-        if (player != null)
-        {
-            Gizmos.color = Color.yellow;
-            Gizmos.DrawWireSphere(transform.position, distanceValue);
-        }
-    }
-
 }

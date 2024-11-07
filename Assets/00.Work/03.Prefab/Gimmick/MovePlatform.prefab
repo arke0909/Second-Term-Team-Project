@@ -12,7 +12,8 @@ GameObject:
   - component: {fileID: 5941311371816358963}
   - component: {fileID: 7906138365667203784}
   - component: {fileID: 3614253448424851942}
-  - component: {fileID: 1548059316598058946}
+  - component: {fileID: 1358890266655708491}
+  - component: {fileID: 9178997646699914426}
   m_Layer: 6
   m_Name: MovePlatform
   m_TagString: Untagged
@@ -229,7 +230,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 3, y: 1}
   m_EdgeRadius: 0
---- !u!114 &1548059316598058946
+--- !u!114 &1358890266655708491
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -238,8 +239,29 @@ MonoBehaviour:
   m_GameObject: {fileID: 4471425667992124208}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3bb454a9023c2f24aaeac5e1f804783b, type: 3}
+  m_Script: {fileID: 11500000, guid: bba7dac5363579b4298a1e4624ef23ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _value: 35
-  _duration: 10
+  _checkType: 2
+  _range: 1
+  _whatIsPlayer:
+    serializedVersion: 2
+    m_Bits: 256
+--- !u!114 &9178997646699914426
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4471425667992124208}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a1c9c0d5e128fd8409a7cf198cd46bec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _moveXY: 0
+  _loopType: 1
+  _ease: 1
+  _loopCnt: -1
+  _endValue: 36
+  _duration: 12
