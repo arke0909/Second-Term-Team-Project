@@ -8,7 +8,12 @@ public class HackManager : MonoBehaviour
     [SerializeField] private GameObject player;
     [SerializeField] private Transform playerTrans;
     [SerializeField] private Grid grid;
+    [SerializeField] private GameObject obj;
 
+    private void Start()
+    {
+        obj.SetActive(false);
+    }
 
     private void Update()
     {
@@ -28,12 +33,19 @@ public class HackManager : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.Alpha4))
         {
-            Debug.Log("Alpha4");
+            ShowObj();
         }
         if (Input.GetKeyDown(KeyCode.Alpha5))
         {
             player.transform.position = new Vector2(player.transform.position.x + 5, player.transform.position.y);
         }
+    }
+
+    private IEnumerator ShowObj()
+    {
+        obj.SetActive(true);
+        yield return new WaitForSeconds(5f);
+        obj.SetActive(false);
     }
 
 }
