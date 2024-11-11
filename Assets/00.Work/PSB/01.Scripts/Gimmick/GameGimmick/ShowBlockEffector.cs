@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ShowBlockEffector : MonoBehaviour
+public class ShowBlockEffector : Gimmick
 {
     [SerializeField] private PlatformEffector2D effector;
     [SerializeField] private SpriteRenderer spriteRenderer;
@@ -30,6 +30,11 @@ public class ShowBlockEffector : MonoBehaviour
             effector.enabled = false;
             spriteRenderer.enabled = true;
         }
+    }
+
+    public override bool Check()
+    {
+        return true;
     }
 
     /*private void CheckArc()
