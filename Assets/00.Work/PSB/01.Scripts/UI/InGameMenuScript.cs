@@ -11,6 +11,7 @@ public class InGameMenuScript : MonoBehaviour
     private bool isOpenMenu;
     [SerializeField] private AudioMixer audioMixer;
     [SerializeField] private Slider musicSlider;
+    [SerializeField] private Slider sfxSlider;
 
     private void Start()
     {
@@ -55,14 +56,24 @@ public class InGameMenuScript : MonoBehaviour
         float volume = musicSlider.value;
         audioMixer.SetFloat("Music", Mathf.Log10(volume) * 20);
         PlayerPrefs.SetFloat("musicVolume", volume);
-        Debug.Log("Setting Complete");
+        Debug.Log("BackGround Music Setting Complete");
+    }
+
+    public void SetSFXVolume()
+    {
+        float volume = sfxSlider.value;
+        audioMixer.SetFloat("SFX", Mathf.Log10(volume) * 20);
+        PlayerPrefs.SetFloat("SFXVolume", volume);
+        Debug.Log("SFX Setting Complete");
     }
 
     public void LoadVolume()
     {
         musicSlider.value = PlayerPrefs.GetFloat("musicVolume");
+        sfxSlider.value = PlayerPrefs.GetFloat("SFXVolume");
         Debug.Log("Load Complete");
         SetMusicVolume();
+        SetSFXVolume();
     }
 
     public void CheckVolume()
@@ -74,6 +85,7 @@ public class InGameMenuScript : MonoBehaviour
         else
         {
             SetMusicVolume();
+            SetSFXVolume();
         }
     }
 
