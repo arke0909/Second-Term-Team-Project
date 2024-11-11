@@ -29,4 +29,4 @@ public class Tutorial : MonoBehaviour
    for (int i = 0; i < text.Length; i++)
     Debug.Log(i + " " + text[i]);
   }
-}
+}   
