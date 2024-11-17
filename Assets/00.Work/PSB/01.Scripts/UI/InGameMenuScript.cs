@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Audio;
 using UnityEngine.Rendering;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class InGameMenuScript : MonoBehaviour
@@ -15,6 +16,7 @@ public class InGameMenuScript : MonoBehaviour
 
     private void Start()
     {
+        Time.timeScale = 1f;
         escPanel.SetActive(false);
         isOpenMenu = false;
         LoadVolume();
@@ -47,9 +49,9 @@ public class InGameMenuScript : MonoBehaviour
     public void ExitBtn()
     {
 #if UNITY_EDITOR
-        UnityEditor.EditorApplication.isPlaying = false;
+        SceneManager.LoadScene("MenuScene");
 #endif
-        Application.Quit();
+        SceneManager.LoadScene("MenuScene");
     }
     public void SetMusicVolume()
     {
