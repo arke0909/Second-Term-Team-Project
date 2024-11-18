@@ -31,6 +31,11 @@ public class Player : MonoBehaviour
         _input.Movement += Flip;
     }
 
+    private void OnDestroy()
+    {
+        _input.Movement -= Flip;
+    }
+
     private void SetPlayerCompo()
     {
         GetComponentsInChildren<IPlayerComponent>().ToList().ForEach(x => _components.Add(x.GetType(), x));
