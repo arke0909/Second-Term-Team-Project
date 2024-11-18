@@ -11,8 +11,6 @@ public class BlockFallGimmick : Gimmick, IIntializable
     [SerializeField] private GameObject fallBlocckPrefab;
     [SerializeField] private GameObject grid;
     [SerializeField] private Rigidbody2D gridRb;
-    [Header("Value")]
-    private bool isFalled = false;
     [Header("Gizmos")]
     public Vector2 range = new Vector2(5f, 5f);
 
@@ -33,8 +31,6 @@ public class BlockFallGimmick : Gimmick, IIntializable
 
     public void Initialzie()
     {
-        isFalled = false;
-
         player = GameObject.FindGameObjectWithTag("Player");
         grid = GameObject.FindGameObjectWithTag("FallObject");
         
@@ -61,7 +57,6 @@ public class BlockFallGimmick : Gimmick, IIntializable
         if (collision.gameObject.layer == 8) //Player Layer
         {
             gridRb.gravityScale = 4f;
-            isFalled = true;
         }
     }
 

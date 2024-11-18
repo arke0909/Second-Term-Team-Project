@@ -1,12 +1,19 @@
-using DG.Tweening;
+using System.IO;
 using UnityEngine;
 using UnityEngine.Audio;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
+[System.Serializable]
+public class UIVolumeSetting
+{
+    public float musicVolume;
+    public float sfxVolume;
+}
+
 public class MenuSceneBtnClick : MonoBehaviour
 {
-    [SerializeField] private GameObject panel;
+    /*[SerializeField] private GameObject panel;
     [SerializeField] private AudioMixer audioMixer;
     [SerializeField] private Slider musicSlider;
     [SerializeField] private Slider sfxSlider;
@@ -30,18 +37,6 @@ public class MenuSceneBtnClick : MonoBehaviour
         Application.Quit();
     }
 
-    public void SettingBtn()
-    {
-        DOTween.Init();
-        panel.transform.DOMoveY(transform.position.y + 500, 1).OnComplete(() => { Debug.Log(1); });
-    }
-
-    public void SettingExitBtn()
-    {
-        DOTween.Init();
-        panel.transform.DOMoveY(transform.position.y - 500, 1);
-    }
-
     public void SetMusicVolume()
     {
         float volume = musicSlider.value;
@@ -60,11 +55,18 @@ public class MenuSceneBtnClick : MonoBehaviour
 
     public void LoadVolume()
     {
-        musicSlider.value = PlayerPrefs.GetFloat("musicVolume");
-        sfxSlider.value = PlayerPrefs.GetFloat("SFXVolume");
-        Debug.Log("Load Complete");
-        SetMusicVolume();
-        SetSFXVolume();
+        try
+        {
+            musicSlider.value = PlayerPrefs.GetFloat("musicVolume");
+            sfxSlider.value = PlayerPrefs.GetFloat("SFXVolume");
+            Debug.Log("Load Complete");
+            SetMusicVolume();
+            SetSFXVolume();
+        }
+        catch(Exception ex)
+        {
+            Debug.LogException(ex);
+        }
     }
 
     public void CheckVolume()
@@ -78,7 +80,81 @@ public class MenuSceneBtnClick : MonoBehaviour
             SetMusicVolume();
             SetSFXVolume();
         }
+    }*/
+
+
+    [SerializeField] private AudioMixer audioMixer;
+    [SerializeField] private Slider musicSlider;
+    [SerializeField] private Slider sfxSlider;
+
+    private string filePath;
+
+    private void Start()
+    {
+        filePath = Path.Combine(Application.persistentDataPath, "volumeSettings.json");
+        LoadVolume();
+
+        musicSlider.onValueChanged.AddListener(value =>
+        {
+            audioMixer.SetFloat("Music", Mathf.Log10(value) * 20);
+            SaveVolume();
+            Debug.Log("BackGround Music Setting Complete");
+        });
+
+        sfxSlider.onValueChanged.AddListener(value =>
+        {
+            audioMixer.SetFloat("SFX", Mathf.Log10(value) * 20);
+            SaveVolume();
+            Debug.Log("SFX Setting Complete");
+        });
     }
 
+    public void StartBtnClick()
+    {
+        SceneManager.LoadScene("Map");
+    }
+
+    public void ExitBtnClick()
+    {
+#if UNITY_EDITOR
+        UnityEditor.EditorApplication.isPlaying = false;
+#endif
+        Application.Quit();
+    }
+
+    public void SaveVolume()
+    {
+        UIVolumeSetting settings = new UIVolumeSetting
+        {
+            musicVolume = musicSlider.value,
+            sfxVolume = sfxSlider.value
+        };
+
+        string json = JsonUtility.ToJson(settings);
+        File.WriteAllText(filePath, json);
+        Debug.Log("Volume settings saved.");
+    }
+
+    public void LoadVolume()
+    {
+        if (File.Exists(filePath))
+        {
+            string json = File.ReadAllText(filePath);
+            UIVolumeSetting settings = JsonUtility.FromJson<UIVolumeSetting>(json);
+            musicSlider.value = settings.musicVolume;
+            sfxSlider.value = settings.sfxVolume;
+
+            audioMixer.SetFloat("Music", Mathf.Log10(settings.musicVolume) * 20);
+            audioMixer.SetFloat("SFX", Mathf.Log10(settings.sfxVolume) * 20);
+            Debug.Log("Load Complete");
+        }
+        else
+        {
+            Debug.Log("No volume settings found.");
+            musicSlider.value = 1.0f; 
+            sfxSlider.value = 1.0f;
+            SaveVolume();
+        }
+    }
 
 }

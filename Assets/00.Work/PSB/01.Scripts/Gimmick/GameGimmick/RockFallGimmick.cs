@@ -11,15 +11,11 @@ public class RockFallGimmick : Gimmick, IIntializable
     [SerializeField] private GameObject rockGimmickPrefab;
     [SerializeField] private GameObject rockGrid;
     [SerializeField] private Rigidbody2D gridRb;
-    [Header("Value")]
-    private bool isFalled = false;
     [Header("Gizmos")]
     public Vector2 range = new Vector2(5f, 5f);
 
     public void Initialzie()
     {
-        isFalled = false;
-
         player = GameObject.FindGameObjectWithTag("Player");
         rockGrid = GameObject.FindGameObjectWithTag("FallObject");
 
@@ -44,7 +40,6 @@ public class RockFallGimmick : Gimmick, IIntializable
     {
         if (IsPlayerInRange())
         {
-            isFalled = true;
             gridRb.gravityScale = 3f;
         }
         //base.EffectGimmick();

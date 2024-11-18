@@ -1,6 +1,5 @@
 using GGMPool;
 using System.Collections;
-using UnityEditor.EditorTools;
 using UnityEngine;
 
 public class EffectPlayer : MonoBehaviour, IPoolable
