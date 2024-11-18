@@ -37,7 +37,7 @@ public abstract class State
 
     public virtual void Enter()
     {
-        _animator.AnimaCompo.Play(_animaHash);
+        _animator.AnimaCompo?.Play(_animaHash);
         _inputReader.Jump += HandleChangeJumpState;
     }
 

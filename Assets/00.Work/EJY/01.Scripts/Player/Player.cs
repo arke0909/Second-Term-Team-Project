@@ -10,7 +10,8 @@ public enum PlayerStateEnum
     Idle,
     Walk,
     Jump,
-    Fall
+    Fall,
+    Dead
 }
 public class Player : MonoBehaviour
 {
@@ -59,4 +60,6 @@ public class Player : MonoBehaviour
         if (dir.x > 0) transform.localScale = new Vector3(1, 1, 1);
         else if (dir.x < 0) transform.localScale = new Vector3(-1, 1, 1);
     }
+
+    public void SetDead() => _stateMachine.ChageState(PlayerStateEnum.Dead);
 }
