@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 824664225032214898}
   - component: {fileID: 6862876605818283122}
   - component: {fileID: 8804163582337722973}
+  - component: {fileID: -4590862362689347388}
   m_Layer: 9
   m_Name: Niddle
   m_TagString: Untagged
@@ -73,8 +74,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -2000625685
+  m_SortingLayer: 6
   m_SortingOrder: 0
   m_Sprite: {fileID: 1024978907, guid: b3cd8f73ba8d2754a8b08c214af9e7f3, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -173,3 +174,15 @@ MonoBehaviour:
   _whatIsPlayer:
     serializedVersion: 2
     m_Bits: 256
+--- !u!114 &-4590862362689347388
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1842350020055606289}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 991ffef5003546540950c42c92d9fe90, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

@@ -23,7 +23,6 @@ public class InputReaderSO : ScriptableObject, IPlayerActions, IPlayerComponent
         }
 
         _control.Enable();
-
     }
 
     public void OnJump(InputAction.CallbackContext context)
