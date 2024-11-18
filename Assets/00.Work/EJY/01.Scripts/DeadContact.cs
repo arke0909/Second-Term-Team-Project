@@ -1,13 +1,22 @@
 using System;
 using System.Collections;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class DeadContact : MonoBehaviour
 {
+    [SerializeField] private SceneManageSO _scene = default;
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.TryGetComponent(out DeadInteraction deadInteraction))
-            deadInteraction.DeadEvent?.Invoke();
+        {
+            StartCoroutine(DeadEvent(deadInteraction));
+        }
+    }
+
+    private IEnumerator DeadEvent(DeadInteraction deadInteraction)
+    {
+        deadInteraction?.DeadEvent?.Invoke();
+        yield return new WaitForSeconds(1);
+        _scene.SceneReload();
     }
 }

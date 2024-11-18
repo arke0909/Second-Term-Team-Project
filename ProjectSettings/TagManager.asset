@@ -61,3 +61,6 @@ TagManager:
   - name: Gimmick
     uniqueID: 2294341611
     locked: 0
+  - name: VFX
+    uniqueID: 3758841013
+    locked: 0

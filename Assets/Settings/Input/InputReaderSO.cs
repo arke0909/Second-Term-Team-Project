@@ -16,13 +16,20 @@ public class InputReaderSO : ScriptableObject, IPlayerActions, IPlayerComponent
 
     private void OnEnable()
     {
-        if (_control == null)
+        try
         {
-            _control = new Controls();
-            _control.Player.SetCallbacks(this);
-        }
+            if (_control == null)
+            {
+                _control = new Controls();
+                _control.Player.SetCallbacks(this);
+            }
 
-        _control.Enable();
+            _control.Enable();
+        }
+        catch (Exception e)
+        {
+            Debug.LogError(e.Message);
+        }
     }
 
     public void OnJump(InputAction.CallbackContext context)
