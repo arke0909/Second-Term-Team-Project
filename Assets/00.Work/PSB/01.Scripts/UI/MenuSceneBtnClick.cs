@@ -98,14 +98,12 @@ public class MenuSceneBtnClick : MonoBehaviour
         {
             audioMixer.SetFloat("Music", Mathf.Log10(value) * 20);
             SaveVolume();
-            Debug.Log("BackGround Music Setting Complete");
         });
 
         sfxSlider.onValueChanged.AddListener(value =>
         {
             audioMixer.SetFloat("SFX", Mathf.Log10(value) * 20);
             SaveVolume();
-            Debug.Log("SFX Setting Complete");
         });
     }
 
@@ -132,7 +130,6 @@ public class MenuSceneBtnClick : MonoBehaviour
 
         string json = JsonUtility.ToJson(settings);
         File.WriteAllText(filePath, json);
-        Debug.Log("Volume settings saved.");
     }
 
     public void LoadVolume()
@@ -146,11 +143,9 @@ public class MenuSceneBtnClick : MonoBehaviour
 
             audioMixer.SetFloat("Music", Mathf.Log10(settings.musicVolume) * 20);
             audioMixer.SetFloat("SFX", Mathf.Log10(settings.sfxVolume) * 20);
-            Debug.Log("Load Complete");
         }
         else
         {
-            Debug.Log("No volume settings found.");
             musicSlider.value = 1.0f; 
             sfxSlider.value = 1.0f;
             SaveVolume();
