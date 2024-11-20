@@ -1,3 +1,4 @@
+using DG.Tweening;
 using System.IO;
 using UnityEngine;
 using UnityEngine.Audio;
@@ -19,13 +20,17 @@ public class InGameMenuScript : MonoBehaviour
     [SerializeField] private Slider musicSlider;
     [SerializeField] private Slider sfxSlider;
 
+    private RectTransform _rectTrm;
+    private CanvasGroup _canvasGroup;
+
     private string filePath;
 
     private void Start()
     {
-        Time.timeScale = 1f;
+        /*Time.timeScale = 1f;
         escPanel.SetActive(false);
-        isOpenMenu = false;
+        isOpenMenu = false;*/
+        CloseWindow();
 
         filePath = Path.Combine(Application.persistentDataPath, "volumeSettings.json");
         LoadVolume();
@@ -46,6 +51,12 @@ public class InGameMenuScript : MonoBehaviour
         });
     }
 
+    private void Awake()
+    {
+        _rectTrm = GetComponent<RectTransform>();
+        _canvasGroup = GetComponent<CanvasGroup>();
+    }
+
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape))
@@ -58,16 +69,44 @@ public class InGameMenuScript : MonoBehaviour
     {
         if (!isOpenMenu)
         {
-            Time.timeScale = 0f;
+            /*Time.timeScale = 0f;
             escPanel.SetActive(true);
-            isOpenMenu = true;
+            isOpenMenu = true;*/
+            OpenWindow();
         }
         else
         {
-            Time.timeScale = 1f;
+            /*Time.timeScale = 1f;
             escPanel.SetActive(false);
-            isOpenMenu = false;
+            isOpenMenu = false;*/
+            CloseWindow();
         }
+    }
+
+    public void OpenWindow()
+    {
+        Sequence seq = DOTween.Sequence().SetAutoKill(false).SetUpdate(true);
+        seq.OnStart(() => _canvasGroup.alpha = 1f);
+        seq.Append(_rectTrm.DOAnchorPosY(0, 0.8f));
+        seq.AppendCallback(() =>
+        {
+            _canvasGroup.interactable = true;
+            _canvasGroup.blocksRaycasts = true;
+        });
+        isOpenMenu = true;
+        Time.timeScale = 0f;
+    }
+
+    private void CloseWindow()
+    {
+        float screenHeight = Screen.height;
+        _canvasGroup.interactable = false;
+        _canvasGroup.blocksRaycasts = false;
+        Sequence seq = DOTween.Sequence().SetAutoKill(false).SetUpdate(true);
+        seq.Append(_rectTrm.DOAnchorPosY(screenHeight, 0.8f));
+        seq.OnComplete(() => _canvasGroup.alpha = 0f);
+        isOpenMenu = false;
+        Time.timeScale = 1f;
     }
 
     public void ExitBtn()

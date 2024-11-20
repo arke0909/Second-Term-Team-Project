@@ -403,7 +403,6 @@ GameObject:
   m_Component:
   - component: {fileID: 80744335}
   - component: {fileID: 80744336}
-  - component: {fileID: 80744337}
   - component: {fileID: 80744338}
   m_Layer: 0
   m_Name: UIManager
@@ -442,21 +441,6 @@ MonoBehaviour:
   audioMixer: {fileID: 24100000, guid: 2196ec74bc9823f4398bc747f27a92d0, type: 2}
   musicSlider: {fileID: 1981491199}
   sfxSlider: {fileID: 112937972}
---- !u!114 &80744337
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 80744334}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 46bcd5a0c8cb28645ad59cdb4002fa3f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  panel: {fileID: 1070640630}
-  settingBtn: {fileID: 185688577}
-  exitBtn: {fileID: 927570908}
 --- !u!114 &80744338
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2421,6 +2405,8 @@ GameObject:
   - component: {fileID: 1070640631}
   - component: {fileID: 1070640633}
   - component: {fileID: 1070640632}
+  - component: {fileID: 1070640635}
+  - component: {fileID: 1070640634}
   m_Layer: 5
   m_Name: Image
   m_TagString: Untagged
@@ -2486,6 +2472,32 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1070640630}
   m_CullTransparentMesh: 1
+--- !u!114 &1070640634
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1070640630}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 46bcd5a0c8cb28645ad59cdb4002fa3f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _joinBtn: {fileID: 185688577}
+  _closeBtn: {fileID: 927570908}
+--- !u!225 &1070640635
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1070640630}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 0
+  m_IgnoreParentGroups: 0
 --- !u!1 &1077390143
 GameObject:
   m_ObjectHideFlags: 0
