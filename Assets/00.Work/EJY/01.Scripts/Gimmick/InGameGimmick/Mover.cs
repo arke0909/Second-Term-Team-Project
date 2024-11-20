@@ -47,6 +47,11 @@ public class Mover : DetectGimmick
         base.EffectGimmick();
     }
 
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        _moveTween.Complete();
+    }
+
     public override bool Check()
     {
         return _detcter.CheckPlayer();

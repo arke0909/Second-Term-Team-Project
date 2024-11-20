@@ -19,7 +19,7 @@ public  class GimmickDetector : MonoBehaviour
                 return overlapCheckPlayer;
 
             case CheckType.Ray:
-                RaycastHit2D rayCheckPlayer = Physics2D.Raycast(transform.position, Vector2.up, _range, _whatIsPlayer);
+                RaycastHit2D rayCheckPlayer = Physics2D.Raycast(transform.position, Vector2.up, _range, _whatIsPlayer); 
                 return rayCheckPlayer;
 
             case CheckType.None:
