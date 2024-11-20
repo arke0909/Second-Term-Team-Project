@@ -1,3 +1,6 @@
+using UnityEngine;
+
+[RequireComponent(typeof(GimmickDetector))]
 public abstract class DetectGimmick : Gimmick
 {
     protected GimmickDetector _detcter;

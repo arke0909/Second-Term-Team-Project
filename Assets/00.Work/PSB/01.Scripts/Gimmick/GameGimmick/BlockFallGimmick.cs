@@ -14,21 +14,6 @@ public class BlockFallGimmick : Gimmick, IIntializable
     [Header("Gizmos")]
     public Vector2 range = new Vector2(5f, 5f);
 
-    /*private void Start()
-    {
-        isFalled = false;
-
-        player = GameObject.FindGameObjectWithTag("Player");
-        grid = GameObject.FindGameObjectWithTag("FallObject");
-
-        if (player != null)
-            playerRb = player.GetComponent<Rigidbody2D>();
-        if (grid != null)
-            gridRb = grid.GetComponent<Rigidbody2D>();
-
-        gridRb.gravityScale = 0f;
-    }*/
-
     public void Initialzie()
     {
         player = GameObject.FindGameObjectWithTag("Player");

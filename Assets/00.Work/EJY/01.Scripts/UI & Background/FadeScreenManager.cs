@@ -6,7 +6,7 @@ public class FadeScreenManager : MonoBehaviour
 {
     [SerializeField] private Image _fadeImage;
     [SerializeField] private BoolEventChannelSO _fadeScreenChannel;
-    [SerializeField] private float _fadeDuration = 0.5f;
+    [SerializeField] private float _fadeDuration = 1.2f;
 
     private readonly int _valueHash = Shader.PropertyToID("_Value");
 

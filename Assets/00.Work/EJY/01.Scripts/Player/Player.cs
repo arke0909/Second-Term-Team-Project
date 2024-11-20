@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Events;
 
 public enum PlayerStateEnum
 {
@@ -21,6 +22,9 @@ public class Player : MonoBehaviour
     private StateMachine _stateMachine;
 
     public bool IsDead { get; private set; } = false;
+
+    public UnityEvent JumpEvent;
+    public UnityEvent LandingEvent;
 
     private void Awake()
     {
