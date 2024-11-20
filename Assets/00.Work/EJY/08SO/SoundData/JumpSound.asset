@@ -9,10 +9,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6f045815d54932a429691eb793ad8783, type: 3}
-  m_Name: PoolManger
+  m_Script: {fileID: 11500000, guid: 8e31ffaaa745fe74dadc53cb311c53b2, type: 3}
+  m_Name: JumpSound
   m_EditorClassIdentifier: 
-  poolingItemList:
-  - {fileID: 11400000, guid: 710ab50580110734ab0e9161c8365dbb, type: 2}
-  - {fileID: 11400000, guid: 4adaff27b1111614492ab4e7c3305b0e, type: 2}
-  _rootTrm: {fileID: 0}
+  audioType: 0
+  clip: {fileID: 8300000, guid: b27733fe6aaf0914da0ed50259070f0b, type: 3}
+  loop: 0
+  randomizePitch: 0
+  randomPicthModifier: 0.1
+  volume: 1
+  basePitch: 1

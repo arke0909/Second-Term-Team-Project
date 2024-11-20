@@ -17,6 +17,7 @@ public abstract class Gimmick : MonoBehaviour
         try
         {
             used = true;
+            Debug.Log(1);
         }
         catch(Exception ex)
         {
