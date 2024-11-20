@@ -15,7 +15,7 @@ public class FeedbacksPlayer : MonoBehaviour
     public void PlayFeedbacks()
     {
         StopFeedbacks();
-        _feedbacks.ForEach(feedback => feedback.PlayFeedbak());
+        _feedbacks.ForEach(feedback => feedback.PlayFeedback());
     }
 
     private void StopFeedbacks()

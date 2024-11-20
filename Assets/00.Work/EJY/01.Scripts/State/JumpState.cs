@@ -10,6 +10,7 @@ public class JumpState : WalkState
     {
         base.Enter();
         _playerMovement.Jump();
+        _player.JumpEvent?.Invoke();
     }
 
     public override void StateUpdate()
