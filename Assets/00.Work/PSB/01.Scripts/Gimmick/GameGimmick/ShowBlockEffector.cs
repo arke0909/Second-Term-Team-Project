@@ -37,6 +37,10 @@ public class ShowBlockEffector : Gimmick
         return true;
     }
 
+    public override void EffectGimmick()
+    {
+    }
+
     /*private void CheckArc()
     {
 
