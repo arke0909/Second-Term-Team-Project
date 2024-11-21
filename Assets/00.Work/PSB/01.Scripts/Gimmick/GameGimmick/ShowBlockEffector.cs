@@ -22,9 +22,18 @@ public class ShowBlockEffector : MonoBehaviour
     {
         if (!used)
         {
-            effector.enabled = false;
-            spriteRenderer.enabled = true;
-            used = true;
+            foreach (ContactPoint2D contact in collision.contacts)
+            {
+                float angle = Vector2.Angle(contact.normal, Vector2.up);
+
+                if (angle <= effector.surfaceArc / 2f)
+                {
+                    effector.enabled = false;
+                    spriteRenderer.enabled = true;
+                    used = true;
+                    break;
+                }
+            }
         }
     }
 }

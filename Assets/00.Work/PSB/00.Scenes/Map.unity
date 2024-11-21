@@ -664,7 +664,7 @@ GameObject:
   - component: {fileID: 330980675}
   - component: {fileID: 330980670}
   - component: {fileID: 330980674}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Enemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -712,7 +712,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 112168270, guid: 9d28fd813422a814e93e1d2e662235db, type: 3}
+  m_Sprite: {fileID: -856579478, guid: 340801e06e1bd69439000d5c0b1404bf, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -818,9 +818,9 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.006512165, y: -0.019538462}
-  m_Size: {x: 0.85540485, y: 1.1640769}
-  m_Direction: 0
+  m_Offset: {x: -0.0049373684, y: -0.6431567}
+  m_Size: {x: 1.2043172, y: 0.7806257}
+  m_Direction: 1
 --- !u!95 &330980673
 Animator:
   serializedVersion: 5
@@ -831,7 +831,7 @@ Animator:
   m_GameObject: {fileID: 330980667}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 01d2952b67e993a4881cf0ce42a0d5ed, type: 2}
+  m_Controller: {fileID: 9100000, guid: b8e07143baabe2b4789ac1fdea06b9cc, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -1020,7 +1020,7 @@ GameObject:
   - component: {fileID: 390362869}
   - component: {fileID: 390362870}
   - component: {fileID: 390362871}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: PlayerCheck
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2241,14 +2241,14 @@ ParticleSystem:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 835511354}
   serializedVersion: 8
-  lengthInSec: 2
+  lengthInSec: 1
   simulationSpeed: 1
   stopAction: 0
   cullingMode: 0
   ringBufferMode: 0
   ringBufferLoopRange: {x: 0, y: 1}
   emitterVelocityMode: 1
-  looping: 1
+  looping: 0
   prewarm: 0
   playOnAwake: 0
   useUnscaledTime: 0
@@ -3569,7 +3569,7 @@ ParticleSystem:
   UVModule:
     serializedVersion: 2
     enabled: 1
-    mode: 0
+    mode: 1
     timeMode: 2
     fps: 9
     frameOverTime:
@@ -3687,7 +3687,15 @@ ParticleSystem:
     uvChannelMask: -1
     rowMode: 0
     sprites:
-    - sprite: {fileID: 0}
+    - sprite: {fileID: 2112265171, guid: 9deeb5a519c9d6b459af2ded6b39c99c, type: 3}
+    - sprite: {fileID: -1498155207, guid: 9deeb5a519c9d6b459af2ded6b39c99c, type: 3}
+    - sprite: {fileID: 1593640818, guid: 9deeb5a519c9d6b459af2ded6b39c99c, type: 3}
+    - sprite: {fileID: 1756600862, guid: 9deeb5a519c9d6b459af2ded6b39c99c, type: 3}
+    - sprite: {fileID: 306120589, guid: 9deeb5a519c9d6b459af2ded6b39c99c, type: 3}
+    - sprite: {fileID: 1558939588, guid: 9deeb5a519c9d6b459af2ded6b39c99c, type: 3}
+    - sprite: {fileID: 731719084, guid: 9deeb5a519c9d6b459af2ded6b39c99c, type: 3}
+    - sprite: {fileID: -924765569, guid: 9deeb5a519c9d6b459af2ded6b39c99c, type: 3}
+    - sprite: {fileID: -1875201600, guid: 9deeb5a519c9d6b459af2ded6b39c99c, type: 3}
     flipU: 0
     flipV: 0
   VelocityModule:
@@ -6964,13 +6972,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 835511354}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: -23.46, y: -1.015, z: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -23.46, y: -0.894, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 1
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &836678348
 GameObject:
   m_ObjectHideFlags: 0
@@ -11088,7 +11096,7 @@ MonoBehaviour:
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 0
-  m_FillAmount: 1
+  m_FillAmount: 0.50499505
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
@@ -12332,7 +12340,7 @@ MonoBehaviour:
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 0
-  m_FillAmount: 1
+  m_FillAmount: 0.50499505
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
