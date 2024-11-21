@@ -17,7 +17,7 @@ TagManager:
   - SpecialGround
   - Player
   - DeadContact
-  - 
+  - Enemy
   - 
   - 
   - 
@@ -46,14 +46,14 @@ TagManager:
   - name: BackGround
     uniqueID: 2590495017
     locked: 0
-  - name: Player
-    uniqueID: 70612633
-    locked: 0
   - name: Object
     uniqueID: 2075700233
     locked: 0
   - name: Ground
     uniqueID: 2045958755
+    locked: 0
+  - name: Player
+    uniqueID: 70612633
     locked: 0
   - name: Water
     uniqueID: 172016705
