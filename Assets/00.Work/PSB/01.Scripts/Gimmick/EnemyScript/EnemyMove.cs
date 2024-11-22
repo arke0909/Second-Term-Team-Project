@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyMove : MonoBehaviour
+public class EnemyMove : DetectGimmick
 {
     /*    private void Awake()
         {
@@ -58,95 +58,94 @@ public class EnemyMove : MonoBehaviour
         }
     */
 
-    private Rigidbody2D rigid;
-    private Animator anim;
-    private SpriteRenderer sprite;
+    [SerializeField] private float jumpForce = 5f;
+    [SerializeField] private float moveSpeed = 2f;
+    [SerializeField] private float flipDelay = 0.5f;
+    [SerializeField] private LayerMask groundLayer;
 
-    public float speed = 2f; // 이동 속도
-    public float jumpPower = 5f; // 점프 힘
-    private float nextMove; // 다음 이동 방향
-    private bool isJumped = false; // 점프 상태
-    private float flipWaitTime; // 방향 전환 대기 시간
-    private bool canFlip = true; // 방향 전환 가능 여부
+    private Rigidbody2D _rb;
+    private bool _isFlipped = false;
+    private bool _isJumping = false;
+    private float _nextFlipTime;
+    private Animator _animator;
+
+    private GimmickDetector _detector;
 
     private void Awake()
     {
-        rigid = GetComponent<Rigidbody2D>();
-        anim = GetComponent<Animator>();
-        sprite = GetComponent<SpriteRenderer>();
-        StartMovement();
-        SetRandomFlipWaitTime(); // 초기 방향 전환 대기 시간 설정
+        base.Awake();
+        _rb = GetComponent<Rigidbody2D>();
+        _detector = GetComponent<GimmickDetector>();
+        _animator = GetComponent<Animator>();
+        ScheduleNextFlip();
     }
 
-    private void FixedUpdate()
+    private void Update()
     {
-        Move();
-
-        // 벽 감지 및 방향 전환
-        if (IsOnWall() && canFlip)
+        if (_detector.CheckPlayer())
         {
-            FlipDirection();
+            if (IsGrounded() && !_isJumping)
+            {
+                Jump();
+            }
+        }
+        else
+        {
+            MoveRandomly();
+            if (Time.time >= _nextFlipTime)
+            {
+                Flip();
+                ScheduleNextFlip();
+            }
         }
 
-        // speed가 0일 때 점프 애니메이션 실행
-        if (nextMove == 0 && !isJumped)
+        // 점프 중이 아닌 경우 Idle 애니메이션으로 전환
+        if (IsGrounded() && !_isJumping)
         {
-            Jump();
+            _animator.SetBool("IsJumping", false);
+            _animator.SetBool("IsIdle", true); // Idle 애니메이션으로 전환
         }
-    }
-
-    private void StartMovement()
-    {
-        nextMove = speed;
-        anim.SetInteger("WalkSpeed", (int)nextMove);
-        Invoke("StartMovement", UnityEngine.Random.Range(2f, 5f)); // Random Move Timer
-    }
-
-    private void Move()
-    {
-        rigid.velocity = new Vector2(nextMove, rigid.velocity.y);
-        anim.SetInteger("WalkSpeed", (int)nextMove); // 이동 중에는 Idle 애니메이션 사용
-    }
-
-    private bool IsOnWall()
-    {
-        // 앞쪽에 벽이 있는지 감지
-        Vector2 frontVect = new Vector2(rigid.position.x + nextMove * 0.5f, rigid.position.y);
-        RaycastHit2D hit = Physics2D.Raycast(frontVect, Vector2.right * Mathf.Sign(nextMove), 0.1f, LayerMask.GetMask("Ground"));
-        return hit.collider != null; // 벽이 있으면 true 반환
-    }
-
-    private void FlipDirection()
-    {
-        if (canFlip)
-        {
-            nextMove *= -1; // 이동 방향 반전
-            sprite.flipX = nextMove < 0; // 방향에 따라 스프라이트 반전
-            isJumped = false; // 점프 상태 초기화
-            canFlip = false; // 플립 후 대기 상태로 변경
-            Invoke("ResetCanFlip", flipWaitTime); // 대기 시간 후 다시 플립 가능하도록 설정
-        }
-    }
-
-    private void ResetCanFlip()
-    {
-        canFlip = true; // 다음 방향 전환 가능
-        SetRandomFlipWaitTime(); // 다음 대기 시간 설정
-    }
-
-    private void SetRandomFlipWaitTime()
-    {
-        flipWaitTime = UnityEngine.Random.Range(1f, 3f); // 1~3초 사이의 랜덤 시간 설정
     }
 
     private void Jump()
     {
-        if (!isJumped)
+        if (_rb != null)
         {
-            rigid.AddForce(Vector2.up * jumpPower, ForceMode2D.Impulse);
-            anim.SetInteger("WalkSpeed", 1); // Jump 애니메이션으로 설정
-            isJumped = true;
+            _isJumping = true;
+            _rb.velocity = new Vector2(_rb.velocity.x, jumpForce);
+            _animator.SetBool("IsJumping", true);
+            _animator.SetBool("IsIdle", false);
+            StartCoroutine(FlipCoroutine());
         }
+    }
+
+    private void MoveRandomly()
+    {
+        float moveDirection = _isFlipped ? -1 : 1;
+        _rb.velocity = new Vector2(moveDirection * moveSpeed, _rb.velocity.y);
+        _animator.SetBool("IsIdle", false); // Idle 애니메이션 해제
+    }
+
+    private bool IsGrounded()
+    {
+        return _rb.IsTouchingLayers(groundLayer);
+    }
+
+    private void Flip()
+    {
+        _isFlipped = !_isFlipped;
+        transform.localScale = new Vector3(transform.localScale.x * -1, transform.localScale.y, transform.localScale.z);
+    }
+
+    private IEnumerator FlipCoroutine()
+    {
+        yield return new WaitForSeconds(flipDelay);
+        _isJumping = false;
+    }
+
+    private void ScheduleNextFlip()
+    {
+        _nextFlipTime = Time.time + UnityEngine.Random.Range(1f, 3f);
     }
 
 }
