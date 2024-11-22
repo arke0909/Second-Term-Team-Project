@@ -12,21 +12,37 @@ public class PlayerMovement : MonoBehaviour, IPlayerComponent
     public float timeInAir;
     public float extraGravity = 20f, gravityDelay = 0.15f;
 
+    public bool canMove;
+
     public void Initialize(Player player)
     {
         _player = player;
-
+        canMove = true;
         RbCompo = GetComponent<Rigidbody2D>();
         _input = _player.GetCompo<InputReaderSO>();
     }
-    public void Movement()
+
+    public void Stop(bool isYAxis = false)
     {
-        Vector2 moveDir = _input.MoveDir;
-        RbCompo.velocity = new Vector2(moveDir.x * _moveSpeed, RbCompo.velocity.y);
+        if (!isYAxis)
+        {
+            RbCompo.velocity = new Vector2(0, RbCompo.velocity.y);
+        }
+        else
+            RbCompo.velocity = Vector2.zero;
     }
 
-    public void Jump()    
+    public void Movement()
     {
-        RbCompo.AddForce(Vector2.up * _jumpPower,ForceMode2D.Impulse);
+        if (canMove)
+        {
+            Vector2 moveDir = _input.MoveDir;
+            RbCompo.velocity = new Vector2(moveDir.x * _moveSpeed, RbCompo.velocity.y);
+        }
+    }
+
+    public void Jump()
+    {
+        RbCompo.AddForce(Vector2.up * _jumpPower, ForceMode2D.Impulse);
     }
 }
