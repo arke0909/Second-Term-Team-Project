@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EnemyComponent : MonoBehaviour
 {
-    [Header("Enemy")]
+/*    [Header("Enemy")]
     [SerializeField] protected Rigidbody2D rigid;
     [SerializeField] protected Animator anim;
     [SerializeField] protected SpriteRenderer sprite;
@@ -26,5 +26,5 @@ public class EnemyComponent : MonoBehaviour
         player = GameObject.FindGameObjectWithTag("Player");
         playerRB = player.GetComponent<Rigidbody2D>();
         enemyMove = GetComponentInParent<EnemyMove>();
-    }
+    }*/
 }

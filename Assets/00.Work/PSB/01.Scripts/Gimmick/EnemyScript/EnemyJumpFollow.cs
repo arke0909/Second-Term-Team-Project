@@ -5,7 +5,7 @@ using UnityEngine.U2D;
 
 public class EnemyJumpFollow : EnemyComponent
 {
-    private void Awake()
+   /* private void Awake()
     {
         player = GameObject.FindGameObjectWithTag("Player");
         rigid = GetComponentInParent<Rigidbody2D>();
@@ -31,15 +31,15 @@ public class EnemyJumpFollow : EnemyComponent
         if (isJumped == false)
         {
             rigid.AddForce(Vector2.up * _jumpPower, ForceMode2D.Impulse);
-            enemyMove.nextMove = 0;
+            //enemyMove.nextMove = 0;
             anim.SetInteger("WalkSpeed", 0);
             isJumped = true;
         }
         if (isJumped == true)
         {
-            enemyMove.nextMove *= 1;
+            //enemyMove.nextMove *= 1;
         }
     }
 
-
+*/
 }
