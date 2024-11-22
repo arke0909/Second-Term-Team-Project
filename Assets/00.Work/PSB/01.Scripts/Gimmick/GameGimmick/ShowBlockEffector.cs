@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -31,9 +32,15 @@ public class ShowBlockEffector : MonoBehaviour
                     effector.enabled = false;
                     spriteRenderer.enabled = true;
                     used = true;
+                    CollisionObjectAddForce(collision);
                     break;
                 }
             }
         }
+    }
+
+    private void CollisionObjectAddForce(Collision2D collision)
+    {
+        throw new NotImplementedException();
     }
 }
