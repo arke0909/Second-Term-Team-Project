@@ -58,12 +58,15 @@ public class EnemyMove : DetectGimmick
         }
     */
 
+
     [SerializeField] private float jumpForce = 5f;
     [SerializeField] private float moveSpeed = 2f;
     [SerializeField] private float flipDelay = 0.5f;
+    [SerializeField] private float cliffCheckDistance = 1f;
     [SerializeField] private LayerMask groundLayer;
 
     private Rigidbody2D _rb;
+    private Collider2D _collider; // Collider2D 추가
     private bool _isFlipped = false;
     private bool _isJumping = false;
     private float _nextFlipTime;
@@ -77,11 +80,14 @@ public class EnemyMove : DetectGimmick
         _rb = GetComponent<Rigidbody2D>();
         _detector = GetComponent<GimmickDetector>();
         _animator = GetComponent<Animator>();
+        _collider = GetComponent<Collider2D>(); // Collider2D 컴포넌트 가져오기
         ScheduleNextFlip();
     }
 
     private void Update()
     {
+        UpdateColliderPosition(); // 콜라이더 위치 업데이트
+
         if (_detector.CheckPlayer())
         {
             if (IsGrounded() && !_isJumping)
@@ -99,12 +105,8 @@ public class EnemyMove : DetectGimmick
             }
         }
 
-        // 점프 중이 아닌 경우 Idle 애니메이션으로 전환
-        if (IsGrounded() && !_isJumping)
-        {
-            _animator.SetBool("IsJumping", false);
-            _animator.SetBool("IsIdle", true); // Idle 애니메이션으로 전환
-        }
+        // 애니메이션 상태 업데이트
+        UpdateAnimationStates();
     }
 
     private void Jump()
@@ -113,8 +115,8 @@ public class EnemyMove : DetectGimmick
         {
             _isJumping = true;
             _rb.velocity = new Vector2(_rb.velocity.x, jumpForce);
-            _animator.SetBool("IsJumping", true);
-            _animator.SetBool("IsIdle", false);
+            _animator.SetBool("IsJumping", true); // 점프 애니메이션 설정
+            _animator.SetBool("IsIdle", false); // Idle 애니메이션 해제
             StartCoroutine(FlipCoroutine());
         }
     }
@@ -123,7 +125,6 @@ public class EnemyMove : DetectGimmick
     {
         float moveDirection = _isFlipped ? -1 : 1;
         _rb.velocity = new Vector2(moveDirection * moveSpeed, _rb.velocity.y);
-        _animator.SetBool("IsIdle", false); // Idle 애니메이션 해제
     }
 
     private bool IsGrounded()
@@ -140,12 +141,55 @@ public class EnemyMove : DetectGimmick
     private IEnumerator FlipCoroutine()
     {
         yield return new WaitForSeconds(flipDelay);
-        _isJumping = false;
     }
 
     private void ScheduleNextFlip()
     {
         _nextFlipTime = Time.time + UnityEngine.Random.Range(1f, 3f);
     }
+
+    private void UpdateColliderPosition()
+    {
+        // 콜라이더를 스프라이트의 중심에 맞추기
+        if (_collider != null)
+        {
+            Vector3 colliderPosition = transform.position; // 게임 오브젝트의 위치
+            _collider.transform.position = colliderPosition; // 콜라이더 위치 업데이트
+        }
+    }
+
+    private void UpdateAnimationStates()
+    {
+        if (IsGrounded())
+        {
+            if (_isJumping)
+            {
+                _animator.SetBool("IsJumping", true);
+                _animator.SetBool("IsIdle", false);
+                _animator.SetBool("IsFalling", false);
+                _isJumping = false; // Jump 상태 해제
+            }
+            else if (_isJumping == false && _rb.velocity.y < 0)
+            {
+                // 점프 중 아래로 떨어질 때
+                _animator.SetBool("IsFalling", true); // 떨어짐 애니메이션 설정
+                _animator.SetBool("IsIdle", false);
+                _animator.SetBool("IsJumping", false);
+            }
+            else
+            {
+                _animator.SetBool("IsIdle", true); // Idle 상태로 전환
+                _animator.SetBool("IsJumping", false);
+                _animator.SetBool("IsFalling", false);
+            }
+        }
+        else if (_rb.velocity.y < 0)
+        {
+            _animator.SetBool("IsFalling", true); // 떨어짐 애니메이션 설정
+            _animator.SetBool("IsIdle", false);
+            _animator.SetBool("IsJumping", false);
+        }
+    }
+
 
 }
