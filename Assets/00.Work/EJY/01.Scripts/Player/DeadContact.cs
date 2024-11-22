@@ -26,6 +26,6 @@ public class DeadContact : MonoBehaviour
     {
         deadInteraction?.DeadEvent?.Invoke();
         yield return new WaitForSeconds(1);
-        _scene.SceneReload(SceneManageSO.CurrentSceneName);
+        _scene.SceneLoad(SceneManageSO.CurrentSceneName);
     }
 }
