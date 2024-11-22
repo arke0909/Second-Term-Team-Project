@@ -121,6 +121,8 @@ public class EnemyMove : DetectGimmick
         }
     }
 
+
+
     private void MoveRandomly()
     {
         float moveDirection = _isFlipped ? -1 : 1;
