@@ -6,15 +6,15 @@ public class DeadContact : MonoBehaviour
     [SerializeField] private SceneManageSO _scene = default;
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Kill(collision);
+        Kill(collision.gameObject);
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        Kill(collision.collider);
+        Kill(collision.gameObject);
     }
 
-    private void Kill(Collider2D collision)
+    private void Kill(GameObject collision)
     {
         if (collision.gameObject.TryGetComponent(out DeadInteraction deadInteraction))
         {

@@ -11,6 +11,6 @@ public class BlockFallGimmick : MonoBehaviour
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        _groundRigid.gravityScale = 1;
+        _groundRigid.gravityScale = 1.2f;
     }
 }
