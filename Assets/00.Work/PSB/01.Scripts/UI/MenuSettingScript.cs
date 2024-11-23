@@ -8,7 +8,6 @@ using UnityEngine.UI;
 
 public class MenuSettingScript : MonoBehaviour
 {
-    //¤Ç¤Ç
     /*[SerializeField] private GameObject panel;
     [SerializeField] private Button settingBtn;
     [SerializeField] private Button exitBtn;
@@ -37,9 +36,13 @@ public class MenuSettingScript : MonoBehaviour
     }
     */
 
-    //¼±¹è´Ô °Å
     [SerializeField] private Button _joinBtn;
     [SerializeField] private Button _closeBtn;
+    [SerializeField] private Button _audioSettingBtn;
+    [SerializeField] private Button _fullscreenSettingBtn;
+
+    [SerializeField] private RectTransform _fullscreenRectTrm;
+    [SerializeField] private CanvasGroup _fullscreenGroup;
 
     private RectTransform _rectTrm;
     private CanvasGroup _canvasGroup;
@@ -49,6 +52,7 @@ public class MenuSettingScript : MonoBehaviour
         Debug.Log($"Time : {Time.timeScale}");
         //Time.timeScale = 1f;
         CloseWindow();
+        CloseScreenSetting();
     }
 
     private void Awake()
@@ -58,6 +62,8 @@ public class MenuSettingScript : MonoBehaviour
 
         _joinBtn.onClick.AddListener(OpenWindow);
         _closeBtn.onClick.AddListener(CloseWindow);
+        _fullscreenSettingBtn.onClick.AddListener(OpenScreenSetting);
+        _audioSettingBtn.onClick.AddListener(CloseScreenSetting);
     }
 
     public void OpenWindow()
@@ -79,7 +85,28 @@ public class MenuSettingScript : MonoBehaviour
         _canvasGroup.blocksRaycasts = false;
         Sequence seq = DOTween.Sequence().SetAutoKill(false).SetUpdate(true);
         seq.Append(_rectTrm.DOAnchorPosY(screenHeight, 0.8f));
-        seq.OnComplete(() => _canvasGroup.alpha = 0f);
     }
+
+    public void OpenScreenSetting()
+    {
+        Sequence seq = DOTween.Sequence().SetAutoKill(false).SetUpdate(true);
+        seq.OnStart(() => _fullscreenGroup.alpha = 1f);
+        seq.Append(_fullscreenRectTrm.DOAnchorPosX(0, 0.8f));
+        seq.AppendCallback(() =>
+        {
+            _fullscreenGroup.interactable = true;
+            _fullscreenGroup.blocksRaycasts = true;
+        });
+    }
+
+    public void CloseScreenSetting()
+    {
+        float screenWidth = Screen.width;
+        _fullscreenGroup.interactable = false;
+        _fullscreenGroup.blocksRaycasts = false;
+        Sequence seq = DOTween.Sequence().SetAutoKill(false).SetUpdate(true);
+        seq.Append(_fullscreenRectTrm.DOAnchorPosX(screenWidth, 0.8f));
+    }
+
 
 }

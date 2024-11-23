@@ -88,6 +88,7 @@ public class MenuSceneBtnClick : MonoBehaviour
     [SerializeField] private Slider sfxSlider;
 
     private string filePath;
+    [SerializeField] private string nextScene;
 
     private void Start()
     {
@@ -109,7 +110,7 @@ public class MenuSceneBtnClick : MonoBehaviour
 
     public void StartBtnClick()
     {
-        SceneManager.LoadScene("Map");
+        SceneManager.LoadScene(nextScene);
     }
 
     public void ExitBtnClick()

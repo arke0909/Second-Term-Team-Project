@@ -62,7 +62,6 @@ public class EnemyMove : DetectGimmick
     [SerializeField] private float jumpForce = 5f;
     [SerializeField] private float moveSpeed = 2f;
     [SerializeField] private float flipDelay = 0.5f;
-    [SerializeField] private float cliffCheckDistance = 1f;
     [SerializeField] private LayerMask groundLayer;
 
     private Rigidbody2D _rb;

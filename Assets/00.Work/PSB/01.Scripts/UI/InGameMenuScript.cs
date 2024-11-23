@@ -69,16 +69,10 @@ public class InGameMenuScript : MonoBehaviour
     {
         if (!isOpenMenu)
         {
-            /*Time.timeScale = 0f;
-            escPanel.SetActive(true);
-            isOpenMenu = true;*/
             OpenWindow();
         }
         else
         {
-            /*Time.timeScale = 1f;
-            escPanel.SetActive(false);
-            isOpenMenu = false;*/
             CloseWindow();
         }
     }
@@ -104,7 +98,7 @@ public class InGameMenuScript : MonoBehaviour
         _canvasGroup.blocksRaycasts = false;
         Sequence seq = DOTween.Sequence().SetAutoKill(false).SetUpdate(true);
         seq.Append(_rectTrm.DOAnchorPosY(screenHeight, 0.8f));
-        seq.OnComplete(() => _canvasGroup.alpha = 0f);
+        //seq.OnComplete(() => _canvasGroup.alpha = 0f);
         isOpenMenu = false;
         Time.timeScale = 1f;
     }
