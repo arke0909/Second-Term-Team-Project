@@ -26,11 +26,11 @@ public class DialogueGameManager : MonoBehaviour
         {
             if (dialogueManager.CheckStartStory(isStartStory) == true)
             {
-                sceneManage.SceneLoad(startStoryScene.GetHashCode());
+                sceneManage.SceneLoad(startStoryScene);
             }
             else
             {
-                sceneManage.SceneLoad(endStoryScene.GetHashCode());
+                sceneManage.SceneLoad(endStoryScene);
             }
         }
 
@@ -42,11 +42,11 @@ public class DialogueGameManager : MonoBehaviour
         {
             if (dialogueManager.CheckStartStory(isStartStory) == false)
             {
-                sceneManage.SceneLoad(endStoryScene.GetHashCode());
+                sceneManage.SceneLoad(endStoryScene);
             }
             else
             {
-                sceneManage.SceneLoad(startStoryScene.GetHashCode());
+                sceneManage.SceneLoad(startStoryScene);
             }
         }
     }
