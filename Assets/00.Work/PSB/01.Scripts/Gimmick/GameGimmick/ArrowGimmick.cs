@@ -63,15 +63,6 @@ public class ArrowGimmick : Gimmick, IIntializable
     }
 
 
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.gameObject.layer == 8)  //Player Layer
-        {
-            player.SetActive(false);
-        }
-    }
-
-
     private void StartMove()
     {
         Vector2 direct = (player.transform.position - transform.position).normalized;

@@ -26,4 +26,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/00.Work/PSB/00.Scenes/The End.unity
     guid: acdeb53cca6060046999e288dcb3688f
+  - enabled: 1
+    path: Assets/00.Work/PSB/00.Scenes/LevelDesignMap.unity
+    guid: ae8eb1ac02948814bbf5fcd4e3d0eab3
   m_configObjects: {}
