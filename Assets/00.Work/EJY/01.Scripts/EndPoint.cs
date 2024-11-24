@@ -25,8 +25,10 @@ public class EndPoint : MonoBehaviour
 
     private IEnumerator EndCoroutine()
     {
+        int endSceneHash = _endSceneName.GetHashCode();
+
         _fadeEvent.RaiseEvent(false);
         yield return new WaitForSeconds(1.2f);
-        _sceneManage.SceneLoad(_endSceneName);
+        _sceneManage.SceneLoad(endSceneHash);
     }
 }

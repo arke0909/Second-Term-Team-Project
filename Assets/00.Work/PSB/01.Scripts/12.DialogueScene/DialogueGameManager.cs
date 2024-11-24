@@ -1,6 +1,5 @@
 using System.Collections;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class DialogueGameManager : MonoBehaviour
 {
@@ -10,6 +9,8 @@ public class DialogueGameManager : MonoBehaviour
     [SerializeField] private string startStoryScene;
     [SerializeField] private string endStoryScene;
     [SerializeField] private bool isStartStory;
+
+    [SerializeField] private SceneManageSO sceneManage;
 
     private void Start()
     {
@@ -25,11 +26,11 @@ public class DialogueGameManager : MonoBehaviour
         {
             if (dialogueManager.CheckStartStory(isStartStory) == true)
             {
-                SceneManager.LoadScene(startStoryScene);
+                sceneManage.SceneLoad(startStoryScene.GetHashCode());
             }
             else
             {
-                SceneManager.LoadScene(endStoryScene);
+                sceneManage.SceneLoad(endStoryScene.GetHashCode());
             }
         }
 
@@ -41,11 +42,11 @@ public class DialogueGameManager : MonoBehaviour
         {
             if (dialogueManager.CheckStartStory(isStartStory) == false)
             {
-                SceneManager.LoadScene(endStoryScene);
+                sceneManage.SceneLoad(endStoryScene.GetHashCode());
             }
             else
             {
-                SceneManager.LoadScene(startStoryScene);
+                sceneManage.SceneLoad(startStoryScene.GetHashCode());
             }
         }
     }

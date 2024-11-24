@@ -23,6 +23,7 @@ public class ShowBlockEffector : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
+        Debug.Log(1);
         foreach (ContactPoint2D contact in collision.contacts)
         {
             float angle = Vector2.Angle(contact.normal, Vector2.up);
@@ -40,12 +41,6 @@ public class ShowBlockEffector : MonoBehaviour
 
                 break;
             }
-        }
-
-        if (used)
-        {
-
-            StartCoroutine(CollisionObjectAddForce(collision));
         }
     }
 
