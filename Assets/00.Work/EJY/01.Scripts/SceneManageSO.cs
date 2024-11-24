@@ -5,5 +5,5 @@ using UnityEngine.SceneManagement;
 public class SceneManageSO : ScriptableObject
 {
     public static string CurrentSceneName => SceneManager.GetActiveScene().name;
-    public void SceneLoad(int sceneHash) => SceneManager.LoadScene(sceneHash);
+    public void SceneLoad(string sceneName) => SceneManager.LoadScene(sceneName);
 }
