@@ -78,7 +78,7 @@ public class MenuSettingScript : MonoBehaviour
         });
     }
 
-    private void CloseWindow()
+    public void CloseWindow()
     {
         float screenHeight = Screen.height;
         _canvasGroup.interactable = false;
