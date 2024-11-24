@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class ShowBlockEffector : MonoBehaviour
 {
+    [SerializeField] private float _replactionPower;
+
     private PlatformEffector2D effector;
     private SpriteRenderer spriteRenderer;
 
@@ -21,26 +23,39 @@ public class ShowBlockEffector : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (!used)
+        Debug.Log(1);
+        foreach (ContactPoint2D contact in collision.contacts)
         {
-            foreach (ContactPoint2D contact in collision.contacts)
-            {
-                float angle = Vector2.Angle(contact.normal, Vector2.up);
+            float angle = Vector2.Angle(contact.normal, Vector2.up);
 
-                if (angle <= effector.surfaceArc / 2f)
+            if (angle <= effector.surfaceArc / 2f)
+            {
+                if (!used)
                 {
                     effector.enabled = false;
                     spriteRenderer.enabled = true;
                     used = true;
-                    CollisionObjectAddForce(collision);
-                    break;
                 }
+
+                StartCoroutine(CollisionObjectAddForce(collision));
+
+                break;
             }
         }
     }
 
-    private void CollisionObjectAddForce(Collision2D collision)
+    private IEnumerator CollisionObjectAddForce(Collision2D collision)
     {
-        throw new NotImplementedException();
+        if (collision.transform.TryGetComponent(out PlayerMovement playerMovement))
+        {
+            Vector2 addDir = new Vector2(playerMovement.RbCompo.velocity.x, -_replactionPower);
+
+            playerMovement.canMove = false;
+            playerMovement.Stop();
+            playerMovement.RbCompo.AddForce(addDir, ForceMode2D.Impulse);
+            yield return new WaitForSeconds(0.2f);
+            playerMovement.canMove = true;
+            Debug.Log("»ÏÀ×");
+        }
     }
 }
