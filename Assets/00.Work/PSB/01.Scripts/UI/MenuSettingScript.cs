@@ -44,13 +44,11 @@ public class MenuSettingScript : MonoBehaviour
     [SerializeField] private RectTransform _fullscreenRectTrm;
     [SerializeField] private CanvasGroup _fullscreenGroup;
 
+    [SerializeField] private CanvasGroup _canvasGroup;
     private RectTransform _rectTrm;
-    private CanvasGroup _canvasGroup;
 
     private void Start()
     {
-        Debug.Log($"Time : {Time.timeScale}");
-        //Time.timeScale = 1f;
         CloseWindow();
         CloseScreenSetting();
     }
@@ -58,7 +56,6 @@ public class MenuSettingScript : MonoBehaviour
     private void Awake()
     {
         _rectTrm = GetComponent<RectTransform>();
-        _canvasGroup = GetComponent<CanvasGroup>();
 
         _joinBtn.onClick.AddListener(OpenWindow);
         _closeBtn.onClick.AddListener(CloseWindow);
@@ -91,7 +88,7 @@ public class MenuSettingScript : MonoBehaviour
     {
         Sequence seq = DOTween.Sequence().SetAutoKill(false).SetUpdate(true);
         seq.OnStart(() => _fullscreenGroup.alpha = 1f);
-        seq.Append(_fullscreenRectTrm.DOAnchorPosX(0, 0.8f));
+        seq.Append(_fullscreenRectTrm.DOAnchorPosX(15, 0.8f));
         seq.AppendCallback(() =>
         {
             _fullscreenGroup.interactable = true;
