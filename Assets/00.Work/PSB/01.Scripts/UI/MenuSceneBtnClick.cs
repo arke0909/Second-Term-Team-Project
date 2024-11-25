@@ -100,8 +100,8 @@ public class MenuSceneBtnClick : MonoBehaviour
 
         if (BGMScript != null)
         {
-            //Destroy(BGMScript.gameObject);
-            BGMScript.StopBGM();
+            Destroy(BGMScript.gameObject);
+            //BGMScript.StopBGM();
         }
 
         #region Music Sound Load

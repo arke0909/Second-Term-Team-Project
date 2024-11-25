@@ -23,7 +23,7 @@ public class DialogueGameManager : MonoBehaviour
         }
         if (BGMScript != null)
         {
-            BGMScript.StopBGM();
+            Destroy(BGMScript.gameObject);
         }
     }
 
