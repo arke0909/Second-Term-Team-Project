@@ -9,13 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8e31ffaaa745fe74dadc53cb311c53b2, type: 3}
-  m_Name: LandingSound
+  m_Script: {fileID: 11500000, guid: 1486e263e7016b643b78c6fb1c6caafd, type: 3}
+  m_Name: PlayerJumpEffect_Item
   m_EditorClassIdentifier: 
-  audioType: 0
-  clip: {fileID: 8300000, guid: ff8cdcc9969a64742b0c13ef0ef81fcc, type: 3}
-  loop: 0
-  randomizePitch: 0
-  randomPicthModifier: 0.1
-  volume: 1
-  basePitch: 1
+  poolType: {fileID: 11400000, guid: 85d9e3d9f761eeb48b299b12b4465f8b, type: 2}
+  prefab: {fileID: 1810866084882524689, guid: d9048ef255c8c7e4ca76c2d849bc32cd, type: 3}
+  initCount: 8

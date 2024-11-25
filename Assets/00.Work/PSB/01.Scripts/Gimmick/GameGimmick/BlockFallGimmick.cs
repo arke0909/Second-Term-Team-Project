@@ -11,6 +11,11 @@ public class BlockFallGimmick : MonoBehaviour
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        _groundRigid.gravityScale = 1.2f;
+        int collisionLayer = 1 << collision.gameObject.layer;
+        if ((collisionLayer & gameObject.layer) != 0)
+        {
+            Debug.Log("½´¿õ");
+            _groundRigid.gravityScale = 1.2f;
+        }
     }
 }

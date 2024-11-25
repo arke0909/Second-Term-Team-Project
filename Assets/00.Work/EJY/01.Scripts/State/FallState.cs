@@ -1,7 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
 public class FallState : WalkState
 {
     public FallState(Player player, string animaName, StateMachine stateMachine) : base(player, animaName, stateMachine)
@@ -17,7 +13,10 @@ public class FallState : WalkState
     private void HandleIsGroundChange(bool prev, bool next)
     {
         if (next)
+        {
+            _player.LandingEvent?.Invoke();
             _stateMachine.ChageState(PlayerStateEnum.Idle);
+        }
     }
 
     public override void Exit()

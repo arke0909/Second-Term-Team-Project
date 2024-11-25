@@ -19,8 +19,8 @@ TagManager:
   - DeadContact
   - Enemy
   - Object
-  - 
-  - 
+  - GroundCollider
+  - CamCollider
   - 
   - 
   - 
