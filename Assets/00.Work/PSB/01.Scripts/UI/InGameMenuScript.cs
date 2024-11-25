@@ -27,8 +27,6 @@ public class InGameMenuScript : MonoBehaviour
 
     private void Start()
     {
-        //CloseWindow();
-
         filePath = Path.Combine(Application.persistentDataPath, "volumeSettings.json");
         LoadVolume();
 
@@ -95,7 +93,6 @@ public class InGameMenuScript : MonoBehaviour
         _canvasGroup.blocksRaycasts = false;
         Sequence seq = DOTween.Sequence().SetAutoKill(false).SetUpdate(true);
         seq.Append(_rectTrm.DOAnchorPosY(screenHeight, 0.8f));
-        //seq.OnComplete(() => _canvasGroup.alpha = 0f);
         isOpenMenu = false;
         Time.timeScale = 1f;
     }
@@ -118,7 +115,6 @@ public class InGameMenuScript : MonoBehaviour
 
         string json = JsonUtility.ToJson(settings);
         File.WriteAllText(filePath, json);
-        Debug.Log("Volume settings saved.");
     }
 
     public void LoadVolume()
@@ -130,18 +126,15 @@ public class InGameMenuScript : MonoBehaviour
             musicSlider.value = settings.musicVolume;
             sfxSlider.value = settings.sfxVolume;
 
-            // 초기값 설정 시 볼륨 적용
             audioMixer.SetFloat("Music", Mathf.Log10(settings.musicVolume) * 20);
             audioMixer.SetFloat("SFX", Mathf.Log10(settings.sfxVolume) * 20);
-            Debug.Log("Load Complete");
         }
         else
         {
             Debug.Log("No volume settings found.");
-            // 기본값 설정
-            musicSlider.value = 1.0f; // 기본값
-            sfxSlider.value = 1.0f; // 기본값
-            SaveVolume(); // 기본값 저장
+            musicSlider.value = 1.0f; 
+            sfxSlider.value = 1.0f; 
+            SaveVolume(); 
         }
     }
 }

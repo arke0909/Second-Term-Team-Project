@@ -65,7 +65,7 @@ public class EnemyMove : DetectGimmick
     [SerializeField] private LayerMask groundLayer;
 
     private Rigidbody2D _rb;
-    private Collider2D _collider; // Collider2D 추가
+    private Collider2D _collider; 
     private bool _isFlipped = false;
     private bool _isJumping = false;
     private float _nextFlipTime;
@@ -73,19 +73,18 @@ public class EnemyMove : DetectGimmick
 
     private GimmickDetector _detector;
 
-    private void Awake()
+    private void Start()
     {
-        base.Awake();
         _rb = GetComponent<Rigidbody2D>();
         _detector = GetComponent<GimmickDetector>();
         _animator = GetComponent<Animator>();
-        _collider = GetComponent<Collider2D>(); // Collider2D 컴포넌트 가져오기
+        _collider = GetComponent<Collider2D>();
         ScheduleNextFlip();
     }
 
     private void Update()
     {
-        UpdateColliderPosition(); // 콜라이더 위치 업데이트
+        UpdateColliderPosition(); 
 
         if (_detector.CheckPlayer())
         {
@@ -104,7 +103,6 @@ public class EnemyMove : DetectGimmick
             }
         }
 
-        // 애니메이션 상태 업데이트
         UpdateAnimationStates();
     }
 
@@ -114,8 +112,8 @@ public class EnemyMove : DetectGimmick
         {
             _isJumping = true;
             _rb.velocity = new Vector2(_rb.velocity.x, jumpForce);
-            _animator.SetBool("IsJumping", true); // 점프 애니메이션 설정
-            _animator.SetBool("IsIdle", false); // Idle 애니메이션 해제
+            _animator.SetBool("IsJumping", true);
+            _animator.SetBool("IsIdle", false); 
             StartCoroutine(FlipCoroutine());
         }
     }
@@ -151,11 +149,10 @@ public class EnemyMove : DetectGimmick
 
     private void UpdateColliderPosition()
     {
-        // 콜라이더를 스프라이트의 중심에 맞추기
         if (_collider != null)
         {
-            Vector3 colliderPosition = transform.position; // 게임 오브젝트의 위치
-            _collider.transform.position = colliderPosition; // 콜라이더 위치 업데이트
+            Vector3 colliderPosition = transform.position;
+            _collider.transform.position = colliderPosition;
         }
     }
 
@@ -168,25 +165,25 @@ public class EnemyMove : DetectGimmick
                 _animator.SetBool("IsJumping", true);
                 _animator.SetBool("IsIdle", false);
                 _animator.SetBool("IsFalling", false);
-                _isJumping = false; // Jump 상태 해제
+                _isJumping = false; 
             }
             else if (_isJumping == false && _rb.velocity.y < 0)
             {
                 // 점프 중 아래로 떨어질 때
-                _animator.SetBool("IsFalling", true); // 떨어짐 애니메이션 설정
+                _animator.SetBool("IsFalling", true); 
                 _animator.SetBool("IsIdle", false);
                 _animator.SetBool("IsJumping", false);
             }
             else
             {
-                _animator.SetBool("IsIdle", true); // Idle 상태로 전환
+                _animator.SetBool("IsIdle", true); 
                 _animator.SetBool("IsJumping", false);
                 _animator.SetBool("IsFalling", false);
             }
         }
         else if (_rb.velocity.y < 0)
         {
-            _animator.SetBool("IsFalling", true); // 떨어짐 애니메이션 설정
+            _animator.SetBool("IsFalling", true);
             _animator.SetBool("IsIdle", false);
             _animator.SetBool("IsJumping", false);
         }

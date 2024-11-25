@@ -21,7 +21,10 @@ public class DialogueGameManager : MonoBehaviour
         {
             dialogueManager.ToggleAutoDialogue();
         }
-        BGMScript.StopBGM();
+        if (BGMScript != null)
+        {
+            BGMScript.StopBGM();
+        }
     }
 
     private void Update()

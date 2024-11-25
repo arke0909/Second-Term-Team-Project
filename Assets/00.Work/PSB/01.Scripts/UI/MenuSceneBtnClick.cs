@@ -90,8 +90,22 @@ public class MenuSceneBtnClick : MonoBehaviour
     private string filePath;
     [SerializeField] private string nextScene;
 
+    private BGMScript BGMScript;
+
     private void Start()
     {
+        Time.timeScale = 1f;
+
+        BGMScript = FindAnyObjectByType<BGMScript>();
+
+        if (BGMScript != null)
+        {
+            //Destroy(BGMScript.gameObject);
+            BGMScript.StopBGM();
+        }
+
+        #region Music Sound Load
+
         filePath = Path.Combine(Application.persistentDataPath, "volumeSettings.json");
         LoadVolume();
 
@@ -106,6 +120,8 @@ public class MenuSceneBtnClick : MonoBehaviour
             audioMixer.SetFloat("SFX", Mathf.Log10(value) * 20);
             SaveVolume();
         });
+        #endregion
+
     }
 
     public void StartBtnClick()
