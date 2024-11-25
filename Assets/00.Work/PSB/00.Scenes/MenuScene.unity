@@ -1898,6 +1898,7 @@ GameObject:
   - component: {fileID: 528375860}
   - component: {fileID: 528375862}
   - component: {fileID: 528375861}
+  - component: {fileID: 528375863}
   m_Layer: 5
   m_Name: AudioPanel
   m_TagString: Untagged
@@ -1966,6 +1967,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 528375859}
   m_CullTransparentMesh: 1
+--- !u!225 &528375863
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 528375859}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &630554392
 GameObject:
   m_ObjectHideFlags: 0
@@ -2923,7 +2936,6 @@ GameObject:
   - component: {fileID: 1070640631}
   - component: {fileID: 1070640633}
   - component: {fileID: 1070640632}
-  - component: {fileID: 1070640635}
   - component: {fileID: 1070640634}
   m_Layer: 5
   m_Name: SettingPopUp
@@ -3009,18 +3021,7 @@ MonoBehaviour:
   _fullscreenSettingBtn: {fileID: 2073562991}
   _fullscreenRectTrm: {fileID: 1947602659}
   _fullscreenGroup: {fileID: 1947602662}
---- !u!225 &1070640635
-CanvasGroup:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1070640630}
-  m_Enabled: 1
-  m_Alpha: 1
-  m_Interactable: 1
-  m_BlocksRaycasts: 0
-  m_IgnoreParentGroups: 0
+  _canvasGroup: {fileID: 528375863}
 --- !u!1 &1077390143
 GameObject:
   m_ObjectHideFlags: 0
