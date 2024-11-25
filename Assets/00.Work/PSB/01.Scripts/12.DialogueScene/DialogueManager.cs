@@ -19,6 +19,8 @@ public class DialogueManager : MonoBehaviour
     [Header("Manager and Coroutine")]
     private Coroutine typingCoroutine;
     private Coroutine autoDialogueCoroutine;
+    [Header("Audio")]
+    [SerializeField] private AudioSource audioSource;
 
     private void Start()
     {
@@ -96,6 +98,7 @@ public class DialogueManager : MonoBehaviour
 
         int typingLength = fullText.GetTypingLength(); 
 
+        audioSource.Play();
         for (int i = 0; i <= typingLength; i++)
         {
             textLocated.text = fullText.Typing(i);
@@ -103,6 +106,7 @@ public class DialogueManager : MonoBehaviour
         }
 
         isTyping = false;
+        audioSource.Stop();
     }
 
     /// <summary>
