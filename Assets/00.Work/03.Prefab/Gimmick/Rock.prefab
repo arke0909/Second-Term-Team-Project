@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 7731533501628708045}
   - component: {fileID: 7317405091817713182}
   - component: {fileID: 7628331972561765276}
-  - component: {fileID: 6966666450461281139}
   m_Layer: 9
   m_Name: Rock
   m_TagString: FallObject
@@ -69,20 +68,7 @@ MonoBehaviour:
   _ease: 0
   _loopCnt: 1
   _endValue: 30
-  _duration: 1.7
---- !u!114 &6966666450461281139
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 597313128619414438}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 991ffef5003546540950c42c92d9fe90, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _scene: {fileID: 11400000, guid: b989b32f990999340b809f5bcf6d5beb, type: 2}
+  _duration: 1.4
 --- !u!1 &4045034096320174756
 GameObject:
   m_ObjectHideFlags: 0
@@ -95,6 +81,7 @@ GameObject:
   - component: {fileID: 7644023239067350462}
   - component: {fileID: 2831679196474879904}
   - component: {fileID: 3304943816135281059}
+  - component: {fileID: 552417668962014632}
   m_Layer: 9
   m_Name: RockFestival
   m_TagString: Untagged
@@ -111,7 +98,7 @@ Transform:
   m_GameObject: {fileID: 4045034096320174756}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0.5, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -258,3 +245,16 @@ PolygonCollider2D:
       - {x: 1.3544694, y: -0.91599715}
       - {x: 1.326148, y: -0.7604386}
   m_UseDelaunayMesh: 0
+--- !u!114 &552417668962014632
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4045034096320174756}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 991ffef5003546540950c42c92d9fe90, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _scene: {fileID: 11400000, guid: b989b32f990999340b809f5bcf6d5beb, type: 2}

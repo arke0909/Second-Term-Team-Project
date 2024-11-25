@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 
-public class RiseBlockGimmick : Gimmick, IInitializable
+public class RiseBlockGimmick : Gimmick, Unity.VisualScripting.IInitializable
 {
     [Header("Gimmick")]
     [SerializeField] private GameObject gimmick;

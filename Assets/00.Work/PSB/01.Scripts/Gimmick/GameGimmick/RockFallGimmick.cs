@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class RockFallGimmick : Gimmick, IIntializable
+public class RockFallGimmick : Gimmick, IInitializable
 {
     [Header("Player")]
     [SerializeField] private GameObject player;
@@ -14,7 +14,7 @@ public class RockFallGimmick : Gimmick, IIntializable
     [Header("Gizmos")]
     public Vector2 range = new Vector2(5f, 5f);
 
-    public void Initialzie()
+    public void Initialze()
     {
         player = GameObject.FindGameObjectWithTag("Player");
         rockGrid = GameObject.FindGameObjectWithTag("FallObject");

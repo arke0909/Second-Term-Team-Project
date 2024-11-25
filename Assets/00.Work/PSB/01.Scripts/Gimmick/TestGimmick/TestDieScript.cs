@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 
-public class TestDieScript : Gimmick, IInitializable
+public class TestDieScript : Gimmick, Unity.VisualScripting.IInitializable
 {
     [SerializeField] private GameObject dieObj;
 

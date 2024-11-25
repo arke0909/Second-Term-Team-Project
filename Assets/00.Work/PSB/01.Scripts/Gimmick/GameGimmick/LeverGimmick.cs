@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 
-public class LeverGimmick : Gimmick, IInitializable
+public class LeverGimmick : Gimmick, Unity.VisualScripting.IInitializable
 {
     [SerializeField] private Grid grid;
 

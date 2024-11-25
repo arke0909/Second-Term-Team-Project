@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 
-public class JumpGimmick : Gimmick, IInitializable
+public class JumpGimmick : Gimmick, Unity.VisualScripting.IInitializable
 {
     [Header("Player")]
     [SerializeField] private GameObject player;
