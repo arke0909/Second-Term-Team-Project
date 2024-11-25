@@ -12,7 +12,6 @@ public class Mover : DetectGimmick
 
     [Header("TweenInfo")]
 
-    [SerializeField] private Transform _center;
     [SerializeField] private MoveXY _moveXY;
     [SerializeField] private LoopType _loopType;
     [SerializeField] private Ease _ease;
