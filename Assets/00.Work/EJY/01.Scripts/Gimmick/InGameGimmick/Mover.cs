@@ -12,6 +12,7 @@ public class Mover : DetectGimmick
 
     [Header("TweenInfo")]
 
+    [SerializeField] private Transform _center;
     [SerializeField] private MoveXY _moveXY;
     [SerializeField] private LoopType _loopType;
     [SerializeField] private Ease _ease;
@@ -55,5 +56,10 @@ public class Mover : DetectGimmick
     public override bool Check()
     {
         return _detcter.CheckPlayer();
+    }
+
+    private void OnDestroy()
+    {
+        _moveTween.Kill();
     }
 }

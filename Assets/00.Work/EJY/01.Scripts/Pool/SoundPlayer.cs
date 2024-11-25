@@ -9,7 +9,7 @@ public class SoundPlayer : MonoBehaviour, IPoolable
     [SerializeField] private AudioMixerGroup _sfxGroup, _BGM;
     [SerializeField] private PoolTypeSO _poolType;
     private Pool _myPool;
-
+    private Tween _deleayCallbackTween;
     public PoolTypeSO PoolType => _poolType;
 
     public GameObject GameObject => gameObject;
@@ -19,6 +19,8 @@ public class SoundPlayer : MonoBehaviour, IPoolable
     private void Awake()
     {
         _audioSource = GetComponent<AudioSource>();
+
+
     }
 
     public void PlaySound(SoundSO data)
@@ -45,7 +47,7 @@ public class SoundPlayer : MonoBehaviour, IPoolable
         if (!data.loop)
         {
             float time = _audioSource.clip.length + 0.2f;
-            DOVirtual.DelayedCall(time, () => _myPool.Push(this));
+            _deleayCallbackTween = DOVirtual.DelayedCall(time, () => _myPool.Push(this));
         }
         _audioSource.Play();
     }
@@ -64,5 +66,13 @@ public class SoundPlayer : MonoBehaviour, IPoolable
     public void SetUpPool(Pool pool)
     {
         _myPool = pool;
+    }
+
+    private void OnDestroy()
+    {
+        if (_deleayCallbackTween.IsActive())
+        {
+            _deleayCallbackTween.Kill();
+        }
     }
 }
