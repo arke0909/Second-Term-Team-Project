@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-public class ArrowGimmick : Gimmick, IIntializable
+public class ArrowGimmick : Gimmick, IInitializable
 {
     [Header("Player")]
     [SerializeField] private GameObject player;
@@ -31,7 +31,7 @@ public class ArrowGimmick : Gimmick, IIntializable
     {
         return _detcter.CheckPlayer();
     }
-    public void Initialzie()
+    public void Initialze()
     {
         objCollider = GetComponent<Collider2D>();
         player = GameObject.FindGameObjectWithTag("Player");

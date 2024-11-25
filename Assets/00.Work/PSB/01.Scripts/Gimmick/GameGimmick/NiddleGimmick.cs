@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 
-public class NiddleGimmick : Gimmick, IInitializable
+public class NiddleGimmick : Gimmick, Unity.VisualScripting.IInitializable
 {
     [SerializeField] private GameObject gimmick;
     [SerializeField] private BoxCollider2D box2D;
