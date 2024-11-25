@@ -8422,6 +8422,14 @@ PrefabInstance:
       propertyPath: LandingEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 7325848520854485978, guid: 64f84be795dba0d4a9b7fcaacd828697, type: 3}
+      propertyPath: m_Size.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7325848520854485978, guid: 64f84be795dba0d4a9b7fcaacd828697, type: 3}
+      propertyPath: m_Offset.y
+      value: -0.02
+      objectReference: {fileID: 0}
     - target: {fileID: 8937334172897358955, guid: 64f84be795dba0d4a9b7fcaacd828697, type: 3}
       propertyPath: m_LocalPosition.x
       value: 111
@@ -14531,7 +14539,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1347269849943353407, guid: f39483d056c69054fa44db5e47a84711, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 175
+      value: 167
       objectReference: {fileID: 0}
     - target: {fileID: 1347269849943353407, guid: f39483d056c69054fa44db5e47a84711, type: 3}
       propertyPath: m_LocalPosition.y
