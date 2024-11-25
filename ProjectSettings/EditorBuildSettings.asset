@@ -9,21 +9,21 @@ EditorBuildSettings:
     path: Assets/00.Work/PSB/00.Scenes/MenuScene.unity
     guid: 799ae58b85fb82b48b82897bb53503e6
   - enabled: 1
-    path: Assets/00.Work/00.Scene/Stage/InGame1.unity
-    guid: e3664eeea231d5844933e71ffe5a29c4
-  - enabled: 1
     path: Assets/00.Work/PSB/00.Scenes/StartTextScene.unity
     guid: ac9aa0e263d2aa945a0aba708fa5c4ba
   - enabled: 1
-    path: Assets/00.Work/PSB/00.Scenes/EndTextScene.unity
-    guid: 32b3ce9c672deb547b88fc2ecef004e5
-  - enabled: 1
-    path: Assets/00.Work/PSB/00.Scenes/The End.unity
-    guid: acdeb53cca6060046999e288dcb3688f
+    path: Assets/00.Work/00.Scene/Stage/InGame1.unity
+    guid: e3664eeea231d5844933e71ffe5a29c4
   - enabled: 1
     path: Assets/00.Work/00.Scene/Stage/InGame2.unity
     guid: 37d2a40ae0b897e49b1fb2ce5249f408
   - enabled: 1
     path: Assets/00.Work/00.Scene/Stage/InGame3.unity
     guid: f20fffca3d59bb74eaf8486ecbd6ecca
+  - enabled: 1
+    path: Assets/00.Work/PSB/00.Scenes/EndTextScene.unity
+    guid: 32b3ce9c672deb547b88fc2ecef004e5
+  - enabled: 1
+    path: Assets/00.Work/PSB/00.Scenes/The End.unity
+    guid: acdeb53cca6060046999e288dcb3688f
   m_configObjects: {}
