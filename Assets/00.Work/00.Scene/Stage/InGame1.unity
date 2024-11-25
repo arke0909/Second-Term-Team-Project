@@ -16888,10 +16888,10 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: 172, y: 10}
+    - - {x: 192, y: 10}
       - {x: -16, y: 10}
       - {x: -16, y: -14}
-      - {x: 172, y: -14}
+      - {x: 192, y: -14}
   m_UseDelaunayMesh: 0
 --- !u!1 &1677196607 stripped
 GameObject:
