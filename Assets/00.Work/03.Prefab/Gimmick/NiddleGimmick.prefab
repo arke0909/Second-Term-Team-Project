@@ -9,13 +9,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3567935963923780943}
-  - component: {fileID: 7834672107648418031}
-  - component: {fileID: 824664225032214898}
   - component: {fileID: 6862876605818283122}
   - component: {fileID: 8804163582337722973}
-  - component: {fileID: -4590862362689347388}
   m_Layer: 9
-  m_Name: Niddle
+  m_Name: NiddleGimmick
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -33,16 +30,99 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 9046361294909194059}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!212 &7834672107648418031
-SpriteRenderer:
+--- !u!114 &6862876605818283122
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1842350020055606289}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a1c9c0d5e128fd8409a7cf198cd46bec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _moveXY: 1
+  _loopType: 1
+  _ease: 1
+  _loopCnt: 1
+  _endValue: 15
+  _duration: 1.07
+--- !u!114 &8804163582337722973
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1842350020055606289}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bba7dac5363579b4298a1e4624ef23ad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _checkType: 0
+  _range: 5
+  _whatIsPlayer:
+    serializedVersion: 2
+    m_Bits: 256
+--- !u!1 &3392404524062258098
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 9046361294909194059}
+  - component: {fileID: 5970719411042128856}
+  - component: {fileID: 6523905778855342423}
+  - component: {fileID: 3340324641022509416}
+  m_Layer: 9
+  m_Name: Niddle
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &9046361294909194059
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3392404524062258098}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.5, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3567935963923780943}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5970719411042128856
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3392404524062258098}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 991ffef5003546540950c42c92d9fe90, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _scene: {fileID: 11400000, guid: b989b32f990999340b809f5bcf6d5beb, type: 2}
+--- !u!212 &6523905778855342423
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3392404524062258098}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -88,13 +168,13 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!60 &824664225032214898
+--- !u!60 &3340324641022509416
 PolygonCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1842350020055606289}
+  m_GameObject: {fileID: 3392404524062258098}
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
@@ -139,51 +219,3 @@ PolygonCollider2D:
       - {x: 0.5, y: -0.5}
       - {x: 0.41856742, y: 0.15375306}
   m_UseDelaunayMesh: 0
---- !u!114 &6862876605818283122
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1842350020055606289}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a1c9c0d5e128fd8409a7cf198cd46bec, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _moveXY: 0
-  _loopType: 1
-  _ease: 1
-  _loopCnt: 2
-  _endValue: 3
-  _duration: 1
---- !u!114 &8804163582337722973
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1842350020055606289}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bba7dac5363579b4298a1e4624ef23ad, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _checkType: 0
-  _range: 5
-  _whatIsPlayer:
-    serializedVersion: 2
-    m_Bits: 256
---- !u!114 &-4590862362689347388
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1842350020055606289}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 991ffef5003546540950c42c92d9fe90, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _scene: {fileID: 11400000, guid: b989b32f990999340b809f5bcf6d5beb, type: 2}

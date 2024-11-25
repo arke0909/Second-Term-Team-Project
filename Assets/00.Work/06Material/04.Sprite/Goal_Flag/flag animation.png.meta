@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 0466dbba669bcd84eb3ac744c33d132d
+guid: f5ae45e8b79e02e44824f1b60cb7f7da
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -93,17 +93,56 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: iPhone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Rock_0
+      name: flag animation_0
       rect:
         serializedVersion: 2
-        x: 1
-        y: 1
+        x: 5
+        y: 2
         width: 32
-        height: 25
+        height: 50
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -111,20 +150,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 56e0b9916aa5c8e419b91c0a4977b76c
-      internalID: 618836054
+      spriteID: 14831d1d516ac4b4c89ac2f8b333198b
+      internalID: 1492655071
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Rock_1
+      name: flag animation_1
       rect:
         serializedVersion: 2
-        x: 51
-        y: 1
-        width: 37
-        height: 21
+        x: 65
+        y: 2
+        width: 30
+        height: 50
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -132,20 +171,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b773e2d43257bd849abe736e265dd36d
-      internalID: 1563860067
+      spriteID: 50c582a732f8bb84ead72c20de837d02
+      internalID: -275592407
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Rock_2
+      name: flag animation_2
       rect:
         serializedVersion: 2
-        x: 106
-        y: 1
-        width: 35
-        height: 19
+        x: 125
+        y: 2
+        width: 31
+        height: 50
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -153,8 +192,50 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e196aa1779063a643a59705ba1b0af6c
-      internalID: -1905776900
+      spriteID: e5dacadd48dbf0e4ea75b1e72d4f438c
+      internalID: -1351840586
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flag animation_3
+      rect:
+        serializedVersion: 2
+        x: 185
+        y: 2
+        width: 32
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 656d91825d29a0147b72551330ba795c
+      internalID: -1014872357
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flag animation_4
+      rect:
+        serializedVersion: 2
+        x: 245
+        y: 2
+        width: 30
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 77ed7bfcd4c217b4aac9f0e43df32321
+      internalID: -529861497
       vertices: []
       indices: 
       edges: []
@@ -170,9 +251,11 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Rock_0: 618836054
-      Rock_1: 1563860067
-      Rock_2: -1905776900
+      flag animation_0: 1492655071
+      flag animation_1: -275592407
+      flag animation_2: -1351840586
+      flag animation_3: -1014872357
+      flag animation_4: -529861497
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
