@@ -27,10 +27,7 @@ public class InGameMenuScript : MonoBehaviour
 
     private void Start()
     {
-        /*Time.timeScale = 1f;
-        escPanel.SetActive(false);
-        isOpenMenu = false;*/
-        CloseWindow();
+        //CloseWindow();
 
         filePath = Path.Combine(Application.persistentDataPath, "volumeSettings.json");
         LoadVolume();

@@ -12,12 +12,16 @@ public class DialogueGameManager : MonoBehaviour
 
     [SerializeField] private SceneManageSO sceneManage;
 
+    private BGMScript BGMScript;
+
     private void Start()
     {
+        BGMScript = FindAnyObjectByType<BGMScript>();
         if (dialogueManager.CheckTalking(true))
         {
             dialogueManager.ToggleAutoDialogue();
         }
+        BGMScript.StopBGM();
     }
 
     private void Update()

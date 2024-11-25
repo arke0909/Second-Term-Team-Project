@@ -590,7 +590,7 @@ MonoBehaviour:
   audioMixer: {fileID: 24100000, guid: 2196ec74bc9823f4398bc747f27a92d0, type: 2}
   musicSlider: {fileID: 1981491199}
   sfxSlider: {fileID: 112937972}
-  nextScene: LevelDesignMap
+  nextScene: StartTextScene
 --- !u!114 &80744338
 MonoBehaviour:
   m_ObjectHideFlags: 0
