@@ -12,18 +12,23 @@ public class BlockFallGimmick : MonoBehaviour
     private void Awake()
     {
         _groundRigid = GetComponent<Rigidbody2D>();
-        _groundRigid.gravityScale = 0;
+        _groundRigid.bodyType = RigidbodyType2D.Static;
     }
-
-
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        int collisionLayer = 1 << collision.gameObject.layer;
-        if ((collisionLayer & gameObject.layer) != 0)
-        {
-            Debug.Log("¶³¾îÁü");
+            _groundRigid.bodyType = RigidbodyType2D.Dynamic;
             _groundRigid.gravityScale = 1.2f;
-        }
+            _used = true;
+    }
+
+    private void Update()
+    {
+        if (!_used) return;
+
+        _currentLifeTime += Time.deltaTime;
+
+        if(_currentLifeTime >= _lifeTime ) 
+            gameObject.SetActive(false);
     }
 }
