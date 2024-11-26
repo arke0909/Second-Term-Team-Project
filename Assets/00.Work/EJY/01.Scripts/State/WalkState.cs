@@ -16,7 +16,7 @@ public class WalkState : State
     public override void StateUpdate()
     {
         if (_inputReader.MoveDir.x == 0 && _groundChecker.IsGround.Value)
-            _stateMachine.ChangeState(PlayerStateEnum.Idle);
+            _stateMachine.ChageState(PlayerStateEnum.Idle);
     }
 
     public override void StateFixedUpdate()

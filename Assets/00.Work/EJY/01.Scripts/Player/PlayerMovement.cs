@@ -7,6 +7,7 @@ public class PlayerMovement : MonoBehaviour, IPlayerComponent
 
     private Player _player;
     private InputReaderSO _input;
+    private PlayerAnimation _animation;
     public Rigidbody2D RbCompo { get; private set; }
 
     public float timeInAir;
@@ -20,6 +21,7 @@ public class PlayerMovement : MonoBehaviour, IPlayerComponent
         canMove = true;
         RbCompo = GetComponent<Rigidbody2D>();
         _input = _player.GetCompo<InputReaderSO>();
+        _animation = _player.GetCompo<PlayerAnimation>();
     }
 
     public void Stop(bool isYAxis = false)
@@ -38,6 +40,7 @@ public class PlayerMovement : MonoBehaviour, IPlayerComponent
         {
             Vector2 moveDir = _input.MoveDir;
             RbCompo.velocity = new Vector2(moveDir.x * _moveSpeed, RbCompo.velocity.y);
+            _animation.FlipController(moveDir.x);
         }
     }
 

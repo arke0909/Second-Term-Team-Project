@@ -30,14 +30,8 @@ public class Player : MonoBehaviour
         _components = new Dictionary<Type, IPlayerComponent>();
 
         SetPlayerCompo();
-
-        _input.Movement += Flip;
     }
 
-    private void OnDestroy()
-    {
-        _input.Movement -= Flip;
-    }
 
     private void SetPlayerCompo()
     {
@@ -57,11 +51,5 @@ public class Player : MonoBehaviour
         return default;
     }
 
-    public void Flip(Vector2 dir)
-    {
-        if (dir.x > 0) transform.localScale = new Vector3(1, 1, 1);
-        else if (dir.x < 0) transform.localScale = new Vector3(-1, 1, 1);
-    }
-
-    public void SetDead() => StateMachine.ChangeState(PlayerStateEnum.Dead);
+    public void SetDead() => StateMachine.ChageState(PlayerStateEnum.Dead);
 }

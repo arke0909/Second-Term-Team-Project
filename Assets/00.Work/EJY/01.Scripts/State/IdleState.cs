@@ -18,7 +18,7 @@ public class IdleState : State
     public override void StateUpdate()
     {
         if(Mathf.Abs(_inputReader.MoveDir.x) > 0)
-            _stateMachine.ChangeState(PlayerStateEnum.Walk);
+            _stateMachine.ChageState(PlayerStateEnum.Walk);
     }
 
     public override void Exit()

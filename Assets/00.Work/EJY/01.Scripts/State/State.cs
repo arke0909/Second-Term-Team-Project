@@ -32,7 +32,7 @@ public abstract class State
     private void HandleChangeJumpState()
     {
         if (_groundChecker.IsGround.Value)
-            _stateMachine.ChangeState(PlayerStateEnum.Jump);
+            _stateMachine.ChageState(PlayerStateEnum.Jump);
     }
 
     public virtual void Enter()

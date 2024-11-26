@@ -15,7 +15,7 @@ public class FallState : WalkState
         if (next)
         {
             _player.LandingEvent?.Invoke();
-            _stateMachine.ChangeState(PlayerStateEnum.Idle);
+            _stateMachine.ChageState(PlayerStateEnum.Idle);
         }
     }
 
