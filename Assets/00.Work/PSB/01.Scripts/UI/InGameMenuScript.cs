@@ -35,14 +35,12 @@ public class InGameMenuScript : MonoBehaviour
         {
             audioMixer.SetFloat("Music", Mathf.Log10(value) * 20);
             SaveVolume();
-            Debug.Log("BackGround Music Setting Complete");
         });
 
         sfxSlider.onValueChanged.AddListener(value =>
         {
             audioMixer.SetFloat("SFX", Mathf.Log10(value) * 20);
             SaveVolume();
-            Debug.Log("SFX Setting Complete");
         });
     }
 
