@@ -20,7 +20,7 @@ public class GroundState : State
     private void HandleIsGroundChange(bool prev, bool next)
     {
         if (next == false)
-            _stateMachine.ChageState(PlayerStateEnum.Fall);
+            _stateMachine.ChangeState(PlayerStateEnum.Fall);
     }
 
     public override void Exit()

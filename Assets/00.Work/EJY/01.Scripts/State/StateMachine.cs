@@ -18,7 +18,7 @@ public class StateMachine : MonoBehaviour, IPlayerComponent
     {
         CreateState();
 
-        ChageState(PlayerStateEnum.Idle);
+        ChangeState(PlayerStateEnum.Idle);
     }
 
     private void Update()
@@ -31,7 +31,7 @@ public class StateMachine : MonoBehaviour, IPlayerComponent
         _playerState[_currentState].StateFixedUpdate();
     }
 
-    public void ChageState(PlayerStateEnum state)
+    public void ChangeState(PlayerStateEnum state)
     {
         _playerState[_currentState].Exit();
         _currentState = state;

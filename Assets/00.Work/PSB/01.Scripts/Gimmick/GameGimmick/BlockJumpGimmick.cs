@@ -11,7 +11,7 @@ public class BlockJumpGimmick : MonoBehaviour
         {
             playerMovement = player.GetCompo<PlayerMovement>();
 
-            player.StateMachine.ChageState(PlayerStateEnum.Jump);
+            player.StateMachine.ChangeState(PlayerStateEnum.Jump);
             playerMovement.Stop(true);
             playerMovement.RbCompo.AddForce(new Vector2(playerMovement.RbCompo.velocity.x, jumpForce), ForceMode2D.Impulse);
         }

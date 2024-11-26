@@ -63,5 +63,5 @@ public class Player : MonoBehaviour
         else if (dir.x < 0) transform.localScale = new Vector3(-1, 1, 1);
     }
 
-    public void SetDead() => StateMachine.ChageState(PlayerStateEnum.Dead);
+    public void SetDead() => StateMachine.ChangeState(PlayerStateEnum.Dead);
 }

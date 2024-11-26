@@ -47,4 +47,18 @@ public class InputReaderSO : ScriptableObject, IPlayerActions, IPlayerComponent
     {
         _player = player;
     }
+
+    public void InputChange()
+    {
+        if (_control.Player.enabled == true)
+        {
+            _control.Player.Disable();
+            _control.UI.Enable();
+        }
+        else
+        {
+            _control.Player.Enable();
+            _control.UI.Disable();
+        }
+    }
 }
