@@ -6425,7 +6425,7 @@ MonoBehaviour:
   hardBtn: {fileID: 372889954}
   nrmalBtn: {fileID: 59950729}
   _canvasGroup: {fileID: 1707394775}
-  normalSceneName: InGame1
+  normalSceneName: StartTextScene
   hardSceneName: HardMode
 --- !u!1660057539 &9223372036854775807
 SceneRoots:

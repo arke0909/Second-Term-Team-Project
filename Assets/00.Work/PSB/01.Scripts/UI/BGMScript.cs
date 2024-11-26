@@ -8,7 +8,7 @@ public class BGMScript : MonoBehaviour
 
     [SerializeField] private AudioSource bgmSource;
 
-    void Awake()
+    private void Awake()
     {
         // ½Ì±ÛÅæ ÆÐÅÏ ±¸Çö
         if (instance == null)
@@ -42,4 +42,5 @@ public class BGMScript : MonoBehaviour
             bgmSource.Stop(); 
         }
     }
+
 }
