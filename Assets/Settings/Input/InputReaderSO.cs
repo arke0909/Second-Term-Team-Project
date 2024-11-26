@@ -64,6 +64,7 @@ public class InputReaderSO : ScriptableObject, IPlayerActions, IPlayerComponent
 
     public void OnESC(InputAction.CallbackContext context)
     {
-        InputChange();
+        if (context.performed)
+            InputChange();
     }
 }
