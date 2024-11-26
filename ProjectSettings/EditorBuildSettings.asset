@@ -21,6 +21,9 @@ EditorBuildSettings:
     path: Assets/00.Work/00.Scene/Stage/InGame3.unity
     guid: f20fffca3d59bb74eaf8486ecbd6ecca
   - enabled: 1
+    path: Assets/00.Work/00.Scene/Stage/HardMode.unity
+    guid: ea9f3cb4207a2de42b8332d581c39d52
+  - enabled: 1
     path: Assets/00.Work/PSB/00.Scenes/EndTextScene.unity
     guid: 32b3ce9c672deb547b88fc2ecef004e5
   - enabled: 1
