@@ -1,16 +1,19 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class BlockJumpGimmick : MonoBehaviour
 {
-    [SerializeField] private Vector2 jumpForce;
+    [SerializeField] private float jumpForce;
+
+    private PlayerMovement playerMovement;
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.TryGetComponent<Rigidbody2D>(out Rigidbody2D rigid))
+        if (collision.gameObject.TryGetComponent(out Player player))
         {
-            jumpForce.x = rigid.velocity.x;
-            rigid.AddForce(jumpForce, ForceMode2D.Impulse);
+            playerMovement = player.GetCompo<PlayerMovement>();
+
+            player.StateMachine.ChageState(PlayerStateEnum.Jump);
+            playerMovement.Stop(true);
+            playerMovement.RbCompo.AddForce(new Vector2(playerMovement.RbCompo.velocity.x, jumpForce), ForceMode2D.Impulse);
         }
     }
 }

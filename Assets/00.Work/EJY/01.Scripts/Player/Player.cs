@@ -17,7 +17,7 @@ public class Player : MonoBehaviour
     [SerializeField] private InputReaderSO _input;
     private Dictionary<Type, IPlayerComponent> _components;
 
-    private StateMachine _stateMachine;
+    public StateMachine StateMachine { get; private set; }
 
     public bool IsDead { get; private set; } = false;
 
@@ -26,7 +26,7 @@ public class Player : MonoBehaviour
 
     private void Awake()
     {
-        _stateMachine = GetComponent<StateMachine>();
+        StateMachine = GetComponent<StateMachine>();
         _components = new Dictionary<Type, IPlayerComponent>();
 
         SetPlayerCompo();
@@ -63,5 +63,5 @@ public class Player : MonoBehaviour
         else if (dir.x < 0) transform.localScale = new Vector3(-1, 1, 1);
     }
 
-    public void SetDead() => _stateMachine.ChageState(PlayerStateEnum.Dead);
+    public void SetDead() => StateMachine.ChageState(PlayerStateEnum.Dead);
 }
