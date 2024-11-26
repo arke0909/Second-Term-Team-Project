@@ -141,7 +141,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6087491024452530523, guid: 88f9d723cf430794ebae10679cbcd8d2, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.62
+      value: -0.96
       objectReference: {fileID: 0}
     - target: {fileID: 6087491024452530523, guid: 88f9d723cf430794ebae10679cbcd8d2, type: 3}
       propertyPath: m_LocalPosition.z
@@ -722,7 +722,7 @@ Transform:
   m_GameObject: {fileID: 252823856}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1, y: -1.4, z: -10}
+  m_LocalPosition: {x: -6.51, y: -1, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -8382,6 +8382,16 @@ Tilemap:
     second:
       serializedVersion: 2
       m_TileIndex: 19
+      m_TileSpriteIndex: 44
+      m_TileMatrixIndex: 2
+      m_TileColorIndex: 0
+      m_TileObjectToInstantiateIndex: 65535
+      dummyAlignment: 0
+      m_AllTileFlags: 1073741826
+  - first: {x: 34, y: -3, z: 0}
+    second:
+      serializedVersion: 2
+      m_TileIndex: 19
       m_TileSpriteIndex: 43
       m_TileMatrixIndex: 2
       m_TileColorIndex: 0
@@ -9468,7 +9478,7 @@ Tilemap:
     m_Data: {fileID: 0}
   - m_RefCount: 0
     m_Data: {fileID: 0}
-  - m_RefCount: 583
+  - m_RefCount: 584
     m_Data: {fileID: 11400000, guid: 7811dec52ee7d954a97c64bdb2186e23, type: 2}
   - m_RefCount: 12
     m_Data: {fileID: 11400000, guid: 940134b6f5b3c7b4393bcac606096696, type: 2}
@@ -9571,7 +9581,7 @@ Tilemap:
     m_Data: {fileID: 21300022, guid: 70273ee5cf94494458e04d0001737b29, type: 3}
   - m_RefCount: 1
     m_Data: {fileID: 21300046, guid: 70273ee5cf94494458e04d0001737b29, type: 3}
-  - m_RefCount: 1
+  - m_RefCount: 2
     m_Data: {fileID: 21300044, guid: 70273ee5cf94494458e04d0001737b29, type: 3}
   m_TileMatrixArray:
   - m_RefCount: 0
@@ -9610,7 +9620,7 @@ Tilemap:
       e31: 7.5e-43
       e32: 7.48e-43
       e33: 7.51e-43
-  - m_RefCount: 743
+  - m_RefCount: 744
     m_Data:
       e00: 1
       e01: 0
@@ -9629,7 +9639,7 @@ Tilemap:
       e32: 0
       e33: 1
   m_TileColorArray:
-  - m_RefCount: 743
+  - m_RefCount: 744
     m_Data: {r: 1, g: 1, b: 1, a: 1}
   - m_RefCount: 0
     m_Data: {r: 6.444e-41, g: 6.444e-41, b: 6.444e-41, a: 6.444e-41}
@@ -9780,9 +9790,9 @@ CompositeCollider2D:
         Y: -70000000
       - X: 258750000
         Y: -70000000
-    - - X: 340000000
+    - - X: 350000000
         Y: -28750000
-      - X: 340000000
+      - X: 350000000
         Y: -20000000
       - X: 310000000
         Y: -20000000
@@ -9790,7 +9800,7 @@ CompositeCollider2D:
         Y: -29375000
       - X: 311249984
         Y: -30000000
-      - X: 338750016
+      - X: 348750016
         Y: -30000000
     - - X: 660000000
         Y: -38750000
@@ -9979,9 +9989,9 @@ CompositeCollider2D:
       - {x: 65, y: -2.0000293}
       - {x: 65.000015, y: -3.9375076}
       - {x: 65.12501, y: -4}
-    - - {x: 33.874992, y: -3}
-      - {x: 34, y: -2.8749893}
-      - {x: 33.999973, y: -2}
+    - - {x: 34.874992, y: -3}
+      - {x: 35, y: -2.8749893}
+      - {x: 34.999973, y: -2}
       - {x: 31, y: -2.0000293}
       - {x: 31.000017, y: -2.9375076}
       - {x: 31.125006, y: -3}
@@ -11731,11 +11741,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8937334172897358955, guid: 64f84be795dba0d4a9b7fcaacd828697, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1
+      value: -6.51
       objectReference: {fileID: 0}
     - target: {fileID: 8937334172897358955, guid: 64f84be795dba0d4a9b7fcaacd828697, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.4
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 8937334172897358955, guid: 64f84be795dba0d4a9b7fcaacd828697, type: 3}
       propertyPath: m_LocalPosition.z
@@ -19730,7 +19740,7 @@ Transform:
   m_GameObject: {fileID: 2066569147}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1, y: -1.4, z: -10}
+  m_LocalPosition: {x: -6.51, y: -1, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
