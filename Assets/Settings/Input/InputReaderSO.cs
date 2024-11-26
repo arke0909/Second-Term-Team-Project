@@ -4,7 +4,7 @@ using UnityEngine.InputSystem;
 using static Controls;
 
 [CreateAssetMenu(menuName = "SO/InputReader")]
-public class InputReaderSO : ScriptableObject, IPlayerActions, IPlayerComponent
+public class InputReaderSO : ScriptableObject, IPlayerActions, IUIActions, IPlayerComponent
 {
     public event Action<Vector2> Movement;
     public event Action Jump;
@@ -22,9 +22,10 @@ public class InputReaderSO : ScriptableObject, IPlayerActions, IPlayerComponent
             {
                 _control = new Controls();
                 _control.Player.SetCallbacks(this);
+                _control.UI.SetCallbacks(this);
             }
 
-            _control.Enable();
+            _control.Player.Enable();
         }
         catch (Exception e)
         {
@@ -50,6 +51,7 @@ public class InputReaderSO : ScriptableObject, IPlayerActions, IPlayerComponent
 
     public void InputChange()
     {
+        Debug.Log(_control.Player.enabled);
         if (_control.Player.enabled == true)
         {
             _control.Player.Disable();
@@ -60,11 +62,15 @@ public class InputReaderSO : ScriptableObject, IPlayerActions, IPlayerComponent
             _control.Player.Enable();
             _control.UI.Disable();
         }
+
     }
 
     public void OnESC(InputAction.CallbackContext context)
     {
         if (context.performed)
+        {
+            Debug.Log("¹ßµ¿");
             InputChange();
+        }
     }
 }

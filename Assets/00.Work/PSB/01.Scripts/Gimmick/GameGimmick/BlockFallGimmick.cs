@@ -17,9 +17,11 @@ public class BlockFallGimmick : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-            _groundRigid.bodyType = RigidbodyType2D.Dynamic;
-            _groundRigid.gravityScale = 1.2f;
-            _used = true;
+        Debug.Log(_groundRigid.bodyType);
+        _groundRigid.bodyType = RigidbodyType2D.Dynamic;
+        Debug.Log(_groundRigid.bodyType);
+        _groundRigid.gravityScale = 1.2f;
+        _used = true;
     }
 
     private void Update()
@@ -28,7 +30,7 @@ public class BlockFallGimmick : MonoBehaviour
 
         _currentLifeTime += Time.deltaTime;
 
-        if(_currentLifeTime >= _lifeTime ) 
+        if (_currentLifeTime >= _lifeTime)
             gameObject.SetActive(false);
     }
 }
