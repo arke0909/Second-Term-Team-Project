@@ -1,6 +1,5 @@
 using System;
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class ShowBlockEffector : MonoBehaviour
@@ -52,7 +51,7 @@ public class ShowBlockEffector : MonoBehaviour
             playerMovement.canMove = false;
             playerMovement.Stop();
             playerMovement.RbCompo.AddForce(addDir, ForceMode2D.Impulse);
-            yield return new WaitForSeconds(0.2f);
+            yield return new WaitForSeconds(0.1f);
             playerMovement.canMove = true;
             playerMovement.Stop();
         }
