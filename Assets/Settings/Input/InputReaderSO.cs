@@ -61,4 +61,9 @@ public class InputReaderSO : ScriptableObject, IPlayerActions, IPlayerComponent
             _control.UI.Disable();
         }
     }
+
+    public void OnESC(InputAction.CallbackContext context)
+    {
+        InputChange();
+    }
 }
