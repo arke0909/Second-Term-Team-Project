@@ -47,5 +47,6 @@ public class PlayerMovement : MonoBehaviour, IPlayerComponent
     public void Jump()
     {
         RbCompo.AddForce(Vector2.up * _jumpPower, ForceMode2D.Impulse);
+        Debug.Log(_jumpPower);
     }
 }

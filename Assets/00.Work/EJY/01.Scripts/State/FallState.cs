@@ -1,4 +1,4 @@
-public class FallState : WalkState
+public class FallState : State
 {
     public FallState(Player player, string animaName, StateMachine stateMachine) : base(player, animaName, stateMachine)
     {
@@ -8,6 +8,11 @@ public class FallState : WalkState
     {
         base.Enter();
         _groundChecker.IsGround.OnValueChanged += HandleIsGroundChange;
+    }
+
+    public override void StateFixedUpdate()
+    {
+        _playerMovement.Movement();
     }
 
     private void HandleIsGroundChange(bool prev, bool next)
