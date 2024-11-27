@@ -5,7 +5,13 @@ using UnityEngine;
 
 public class EnemyMove : DetectGimmick
 {
-    /*    private void Awake()
+    /*
+    Rigidbody2D rigid;
+    Animator anim;
+    SpriteRenderer sprite;
+    float nextMove;
+    int speed;
+        private void Awake()
         {
             rigid = GetComponent<Rigidbody2D>();
             anim = GetComponent<Animator>();
@@ -56,8 +62,8 @@ public class EnemyMove : DetectGimmick
             float nextThinkTime = UnityEngine.Random.Range(2f, 5f);
             Invoke("NextAction", nextThinkTime);
         }
+    
     */
-
 
     [SerializeField] private float jumpForce = 5f;
     [SerializeField] private float moveSpeed = 2f;
