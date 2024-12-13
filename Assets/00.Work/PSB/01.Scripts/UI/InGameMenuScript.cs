@@ -74,7 +74,7 @@ public class InGameMenuScript : MonoBehaviour
     {
         Sequence seq = DOTween.Sequence().SetAutoKill(false).SetUpdate(true);
         seq.OnStart(() => _canvasGroup.alpha = 1f);
-        seq.Append(_rectTrm.DOAnchorPosY(0, 0.8f));
+        seq.Append(_rectTrm.DOAnchorPosY(0, 1f));
         seq.AppendCallback(() =>
         {
             _canvasGroup.interactable = true;
@@ -90,7 +90,7 @@ public class InGameMenuScript : MonoBehaviour
         _canvasGroup.interactable = false;
         _canvasGroup.blocksRaycasts = false;
         Sequence seq = DOTween.Sequence().SetAutoKill(false).SetUpdate(true);
-        seq.Append(_rectTrm.DOAnchorPosY(screenHeight, 0.8f));
+        seq.Append(_rectTrm.DOAnchorPosY(4000, 1f));
         isOpenMenu = false;
         Time.timeScale = 1f;
     }
