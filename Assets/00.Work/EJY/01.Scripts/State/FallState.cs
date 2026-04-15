@@ -20,7 +20,7 @@ public class FallState : State
         if (next)
         {
             _player.LandingEvent?.Invoke();
-            _stateMachine.ChageState(PlayerStateEnum.Idle);
+            _stateMachine.ChangeState(PlayerStateEnum.Idle);
         }
     }
 

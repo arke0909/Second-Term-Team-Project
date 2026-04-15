@@ -19,7 +19,7 @@ public class JumpState : WalkState
         ApplyExtraGravity();
 
         if (_playerMovement.RbCompo.velocity.y < 0)
-            _stateMachine.ChageState(PlayerStateEnum.Fall);
+            _stateMachine.ChangeState(PlayerStateEnum.Fall);
     }
 
     public override void StateFixedUpdate()

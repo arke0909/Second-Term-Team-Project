@@ -51,5 +51,5 @@ public class Player : MonoBehaviour
         return default;
     }
 
-    public void SetDead() => StateMachine.ChageState(PlayerStateEnum.Dead);
+    public void SetDead() => StateMachine.ChangeState(PlayerStateEnum.Dead);
 }
